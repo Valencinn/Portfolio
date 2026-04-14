@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Valentin — Visual design work, mockups, posters and brand systems.">
+    <title>Design — Valentin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <!-- ── Header ── -->
+        <header class="site-header">
+            <a class="brand" href="index.html">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span class="brand-copy">
+                    <strong>Valentin</strong>
+                    <small>Creative Portfolio</small>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="coding.html">Coding</a>
+                <a class="nav-link" href="design.html">Design</a>
+                <a class="nav-link" href="sound.html">Sound</a>
+            </nav>
+        </header>
+
+        <!-- ── Sub-hero ── -->
+        <section class="sub-hero glass" aria-label="Design hero">
+            <div class="sub-hero-accent" aria-hidden="true" style="background:
+        radial-gradient(ellipse 60% 55% at 90% 10%, rgba(233,196,106,0.14), transparent 55%),
+        radial-gradient(ellipse 50% 45% at 5% 85%, rgba(144,200,240,0.1), transparent 50%);">
+            </div>
+            <div style="position:relative;z-index:1;">
+                <p class="hero-eyebrow">Design</p>
+                <h1 data-reveal>Visual<br><em style="font-style:normal;color:var(--amber);">systems.</em></h1>
+                <p data-reveal data-delay="1"
+                    style="font-size:1.05rem;color:var(--text-muted);max-width:52ch;line-height:1.7;margin-top:16px;">
+                    Posters, interface mockups, branding systems, and image-led storytelling.
+                    Design as a medium with its own rules, atmosphere, and intention.
+                </p>
+                <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;" data-reveal data-delay="2">
+                    <a class="btn btn-primary" href="#gallery"
+                        style="background:var(--amber);color:#100e06;box-shadow:0 10px 28px rgba(233,196,106,0.25);">View
+                        gallery ↓</a>
+                    <div class="status-dot" style="align-self:center;">Accepting commissions</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Gallery ── -->
+        <section class="section glass" id="gallery" aria-label="Design gallery">
+            <div class="section-header">
+                <div data-reveal>
+                    <p class="section-label">Gallery</p>
+                    <h2 class="section-title">Selected work.</h2>
+                </div>
+            </div>
+
+            <div class="work-grid featured" style="margin-bottom:14px;">
+                <!-- Large showcase -->
+                <div class="work-card" data-reveal>
+                    <div class="work-media work-media-tall">
+                        <div class="work-media-inner media-amber" style="flex-direction:column;gap:20px;">
+                            <!-- Stacked frames visual -->
+                            <div style="position:relative;width:100%;height:100%;">
+                                <div
+                                    style="position:absolute;inset:16px 80px 28px 16px;border-radius:16px;border:1px solid rgba(233,196,106,0.3);background:linear-gradient(145deg,rgba(233,196,106,0.12),rgba(255,255,255,0.03));transform:rotate(-5deg);">
+                                </div>
+                                <div
+                                    style="position:absolute;inset:26px 46px 18px 54px;border-radius:16px;border:1px solid rgba(144,200,240,0.2);background:linear-gradient(145deg,rgba(144,200,240,0.08),rgba(255,255,255,0.02));transform:rotate(3deg);">
+                                </div>
+                                <div
+                                    style="position:absolute;inset:40px 60px 30px 40px;border-radius:16px;border:1px solid rgba(255,255,255,0.1);background:linear-gradient(180deg,rgba(255,255,255,0.07),rgba(255,255,255,0.02));">
+                                </div>
+                            </div>
+                        </div>
+                        <span class="work-badge">⭐ Case study</span>
+                    </div>
+                    <div class="work-body">
+                        <p class="work-tag" style="color:var(--amber);">Branding · Identity</p>
+                        <h3>Studio Aurum — Complete brand identity</h3>
+                        <p>A full visual identity system for a boutique creative studio. Includes logotype, color
+                            palette, typography scale, stationery, and digital guidelines.</p>
+                        <div class="work-meta">
+                            <span class="pill">Figma</span><span class="pill">Brand system</span><span
+                                class="pill">Print</span><span class="pill">Digital</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Two smaller -->
+                <div style="display:grid;gap:14px;">
+                    <div class="work-card" data-reveal data-delay="1">
+                        <div class="work-media">
+                            <div class="work-media-inner media-blue">
+                                <p
+                                    style="font-family:var(--font-display);font-size:2rem;color:var(--sky);letter-spacing:-0.04em;">
+                                    Ui</p>
+                            </div>
+                            <span class="work-badge">Interface</span>
+                        </div>
+                        <div class="work-body">
+                            <p class="work-tag" style="color:var(--sky);">UI Design · App</p>
+                            <h3>Pulse — Health tracking app</h3>
+                            <p>Mobile UI for a fitness and biometric tracking app. Dark theme, data-dense layout, and
+                                motion design spec.</p>
+                            <div class="work-meta"><span class="pill">Figma</span><span
+                                    class="pill">Prototyping</span><span class="pill">Mobile</span></div>
+                        </div>
+                    </div>
+
+                    <div class="work-card" data-reveal data-delay="2">
+                        <div class="work-media">
+                            <div class="work-media-inner media-purple">
+                                <p
+                                    style="font-family:var(--font-display);font-size:1.6rem;color:rgba(180,150,255,0.9);text-align:center;line-height:1.2;">
+                                    Type<br>Study</p>
+                            </div>
+                            <span class="work-badge">Typography</span>
+                        </div>
+                        <div class="work-body">
+                            <p class="work-tag" style="color:rgba(180,150,255,0.9);">Editorial · Type</p>
+                            <h3>Glyphs — A typographic editorial</h3>
+                            <p>An editorial layout experiment exploring grid-breaking typography, variable fonts, and
+                                gestural composition.</p>
+                            <div class="work-meta"><span class="pill">InDesign</span><span
+                                    class="pill">Editorial</span><span class="pill">Print</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second row -->
+            <div class="work-grid">
+                <div class="work-card" data-reveal>
+                    <div class="work-media">
+                        <div class="work-media-inner media-rose media-grid-bg">
+                            <p
+                                style="font-family:var(--font-display);font-size:1.5rem;color:var(--rose);text-align:center;">
+                                Poster</p>
+                        </div><span class="work-badge">Print</span>
+                    </div>
+                    <div class="work-body">
+                        <p class="work-tag" style="color:var(--rose);">Poster · Print</p>
+                        <h3>Event poster series</h3>
+                        <p>Three-piece poster series for an experimental music collective. Bold gradients, layered
+                            noise, and brutalist grid.</p>
+                        <div class="work-meta"><span class="pill">Illustrator</span><span class="pill">Print
+                                design</span></div>
+                    </div>
+                </div>
+
+                <div class="work-card" data-reveal data-delay="1">
+                    <div class="work-media">
+                        <div class="work-media-inner media-green media-grid-bg">
+                            <p
+                                style="font-family:var(--font-display);font-size:1.5rem;color:var(--lime);text-align:center;">
+                                Web</p>
+                        </div><span class="work-badge">UI</span>
+                    </div>
+                    <div class="work-body">
+                        <p class="work-tag" style="color:var(--lime);">Web design · Landing</p>
+                        <h3>Verdant — SaaS landing page</h3>
+                        <p>High-conversion landing page design for a sustainability-focused SaaS. Component library and
+                            responsive breakpoints included.</p>
+                        <div class="work-meta"><span class="pill">Figma</span><span class="pill">Web</span><span
+                                class="pill">Responsive</span></div>
+                    </div>
+                </div>
+
+                <div class="work-card" data-reveal data-delay="2">
+                    <div class="work-media">
+                        <div class="work-media-inner media-amber media-grid-bg">
+                            <p
+                                style="font-family:var(--font-display);font-size:1.5rem;color:var(--amber);text-align:center;">
+                                Icons</p>
+                        </div><span class="work-badge">System</span>
+                    </div>
+                    <div class="work-body">
+                        <p class="work-tag" style="color:var(--amber);">Icon system · SVG</p>
+                        <h3>Strokes — Custom icon library</h3>
+                        <p>A 120-icon SVG library with stroke-first design, optical sizing corrections, and Figma
+                            auto-layout integration.</p>
+                        <div class="work-meta"><span class="pill">Figma</span><span class="pill">SVG</span><span
+                                class="pill">120 icons</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Process ── -->
+        <section class="feature-panel glass" data-reveal aria-label="Design process">
+            <div class="feature-copy">
+                <p class="section-label">Process</p>
+                <h2>From concept to craft.</h2>
+                <p>
+                    Every project starts with constraints and intent — not blank canvases.
+                    The best design solves a real problem with elegance, not decoration.
+                </p>
+                <div class="work-meta" style="margin-top:8px;">
+                    <span class="pill">Research</span>
+                    <span class="pill">Wireframes</span>
+                    <span class="pill">Visual design</span>
+                    <span class="pill">Handoff</span>
+                </div>
+            </div>
+            <div class="feature-visual media-amber media-grid-bg">
+                <div style="display:grid;gap:16px;place-items:center;text-align:center;padding:32px;">
+                    <div style="display:flex;gap:14px;">
+                        <span class="d-frame d-frame-a"
+                            style="position:static;width:80px;height:60px;transform:rotate(-5deg);flex-shrink:0;border-radius:10px;"></span>
+                        <span class="d-frame d-frame-b"
+                            style="position:static;width:60px;height:70px;transform:rotate(4deg);flex-shrink:0;border-radius:10px;"></span>
+                        <span class="d-frame d-frame-c"
+                            style="position:static;width:70px;height:55px;flex-shrink:0;border-radius:10px;"></span>
+                    </div>
+                    <p style="font-family:var(--font-display);font-size:1.2rem;color:var(--amber);">Visual systems</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Tools ── -->
+        <section class="section glass" aria-label="Design tools">
+            <div data-reveal>
+                <p class="section-label">Tools</p>
+                <h2 class="section-title" style="margin-bottom:28px;">Design toolkit.</h2>
+            </div>
+            <div class="mini-grid">
+                <div class="mini-card" data-reveal>
+                    <span class="mini-icon">🎨</span>
+                    <h4>Interface design</h4>
+                    <p>Figma, FigJam, Auto Layout, component systems, and prototyping with realistic interactions.</p>
+                </div>
+                <div class="mini-card" data-reveal data-delay="1">
+                    <span class="mini-icon">✏️</span>
+                    <h4>Graphic design</h4>
+                    <p>Adobe Illustrator, Photoshop, InDesign, and Affinity Publisher for print and editorial work.</p>
+                </div>
+                <div class="mini-card" data-reveal data-delay="2">
+                    <span class="mini-icon">📐</span>
+                    <h4>Motion &amp; code</h4>
+                    <p>CSS animations, After Effects basics, and GSAP for bringing static designs to life.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Footer ── -->
+        <footer class="site-footer">
+            <span class="footer-brand">Valentin · Creative Portfolio</span>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="index.html">Home</a>
+                <a href="coding.html">Coding</a>
+                <a href="design.html">Design</a>
+                <a href="sound.html">Sound</a>
+            </nav>
+            <p class="footer-note">Built with care · <span data-year></span></p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

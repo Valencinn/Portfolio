@@ -1,249 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Valentin's creative portfolio across code, design, and sound.">
-  <meta name="theme-color" content="#0b0f0d">
-  <title>Valentin | Creative Portfolio</title>
+  <meta name="description" content="Valentin — Multidisciplinary creative portfolio. Code, design and sound.">
+  <title>Valentin — Creative Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles.css">
   <script defer src="main.js"></script>
 </head>
-<body class="theme-landing">
+
+<body>
   <div class="site-wrap">
-    <header class="site-header panel" data-reveal>
+
+    <!-- ── Header ── -->
+    <header class="site-header">
       <a class="brand" href="index.html">
         <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-copy">
           <strong>Valentin</strong>
-          <span>Creative Portfolio</span>
+          <small>Creative Portfolio</small>
         </span>
       </a>
-
       <nav class="site-nav" aria-label="Primary">
-        <a class="nav-link" href="index.html" aria-current="page">Home</a>
+        <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="coding.html">Coding</a>
         <a class="nav-link" href="design.html">Design</a>
         <a class="nav-link" href="sound.html">Sound</a>
       </nav>
     </header>
 
-    <main>
-      <section class="page-hero landing-hero panel">
-        <div class="hero-copy" data-reveal="up">
-          <p class="eyebrow">Multidisciplinary portfolio</p>
-          <h1 class="page-title">Code, design, and sound in one modern studio.</h1>
-          <p class="hero-description">
-            The landing page now works as the front door of the portfolio. It sets the tone first,
-            then routes people into dedicated Coding, Design, and Sound pages that each have their own focus.
-          </p>
-
-          <div class="button-row">
-            <a class="button button-primary" href="#categories">Explore categories</a>
-            <a class="button button-secondary" href="#contact">Contact section</a>
-          </div>
-
-          <ul class="meta-list" aria-label="Portfolio focus">
-            <li>GitHub projects and product builds</li>
-            <li>Visual direction and case studies</li>
-            <li>Sound projects and sonic experiments</li>
-          </ul>
+    <!-- ── Hero ── -->
+    <section class="page-hero glass" aria-label="Hero">
+      <div class="hero-copy" data-reveal>
+        <p class="hero-eyebrow">Multidisciplinary portfolio</p>
+        <h1 class="hero-title">
+          Code, design<br>and <em>sound</em>.
+        </h1>
+        <p class="hero-desc">
+          A creative studio spanning front-end development, visual systems, and sonic composition.
+          Three distinct worlds, one coherent vision.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#categories">Explore my work</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
         </div>
+        <div class="hero-meta">
+          <span class="hero-chip">🖥 GitHub projects</span>
+          <span class="hero-chip">🎨 Visual direction</span>
+          <span class="hero-chip">🎵 Sound pieces</span>
+        </div>
+      </div>
 
-        <div class="hero-visual landing-visual interactive-scene" aria-hidden="true" data-reveal="left">
-          <span class="orb orb-one"></span>
-          <span class="orb orb-two"></span>
-          <span class="orb orb-three"></span>
-
-          <div class="visual-core">
-            <p class="core-label">Creative studio mode</p>
-            <strong>Three focused worlds</strong>
-            <div class="core-tags">
-              <span>Coding</span>
-              <span>Design</span>
-              <span>Sound</span>
-            </div>
+      <div class="orb-wrap" aria-hidden="true">
+        <span class="orb-ring"></span>
+        <div class="orb-core">
+          <span class="orb-label">Creative mode</span>
+          <span class="orb-value">V / Studio</span>
+          <div class="orb-tags">
+            <span class="orb-tag">Code</span>
+            <span class="orb-tag">Design</span>
+            <span class="orb-tag">Sound</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section panel" id="categories">
-        <div class="section-head" data-reveal>
-          <div>
-            <p class="eyebrow">Entry points</p>
-            <h2 class="section-title">A landing page that sends people into the right category fast.</h2>
-          </div>
-          <p class="section-copy">
-            Each path has its own page, mood, and layout while still feeling like part of the same website.
-          </p>
+    <!-- ── Stats ── -->
+    <div class="stats-strip glass" data-reveal>
+      <div class="stat-item">
+        <span class="stat-num">12+</span>
+        <span class="stat-label">Coding projects</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">8</span>
+        <span class="stat-label">Design works</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">20+</span>
+        <span class="stat-label">Sound pieces</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3yr</span>
+        <span class="stat-label">Active creating</span>
+      </div>
+    </div>
+
+    <!-- ── Categories ── -->
+    <section class="section glass" id="categories" aria-label="Categories">
+      <div class="section-header">
+        <div data-reveal>
+          <p class="section-label">Entry points</p>
+          <h2 class="section-title">Three focused worlds.</h2>
         </div>
+        <p style="font-size:.88rem;color:var(--text-muted);max-width:36ch;line-height:1.65;" data-reveal="right">
+          Each section has its own atmosphere and layout while sharing a unified visual language.
+        </p>
+      </div>
 
-        <div class="category-grid">
-          <a class="category-card" href="coding.html" data-reveal="up">
-            <div class="category-media coding-preview">
-              <div class="preview-window">
-                <span></span>
-                <span></span>
-                <span></span>
+      <div class="category-grid">
+        <!-- Coding -->
+        <a class="cat-card" href="coding.html" data-reveal data-delay="1">
+          <div class="cat-media cat-media-code">
+            <div class="code-preview">
+              <div class="win-dots">
+                <span class="win-dot"></span>
+                <span class="win-dot"></span>
+                <span class="win-dot"></span>
               </div>
-              <div class="preview-lines">
-                <span class="line long"></span>
-                <span class="line medium"></span>
-                <span class="line short"></span>
-                <span class="line long"></span>
+              <div class="code-lines">
+                <span class="code-line accent l-long"></span>
+                <span class="code-line l-med"></span>
+                <span class="code-line l-short"></span>
+                <span class="code-line l-long"></span>
+                <span class="code-line accent l-med"></span>
+                <span class="code-line l-short"></span>
               </div>
-              <span class="media-badge">Pinned builds</span>
             </div>
-            <div class="card-body">
-              <p class="card-kicker">Coding</p>
-              <h3>Projects, systems, and front-end work</h3>
-              <p>Built for GitHub repositories, product experiments, technical storytelling, and polished screenshots.</p>
-            </div>
-          </a>
-
-          <a class="category-card" href="design.html" data-reveal="up">
-            <div class="category-media design-preview">
-              <div class="frame-stack frame-back"></div>
-              <div class="frame-stack frame-middle"></div>
-              <div class="frame-stack frame-front"></div>
-              <span class="media-badge">Visual archive</span>
-            </div>
-            <div class="card-body">
-              <p class="card-kicker">Design</p>
-              <h3>Visual systems, mockups, and image-led projects</h3>
-              <p>Designed for big visuals, direction-heavy work, posters, interfaces, and gallery-like presentation.</p>
-            </div>
-          </a>
-
-          <a class="category-card" href="sound.html" data-reveal="up">
-            <div class="category-media sound-preview">
-              <div class="sound-wave">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <span class="media-badge">Audio work</span>
-            </div>
-            <div class="card-body">
-              <p class="card-kicker">Sound</p>
-              <h3>Scoring, production, and immersive sound pieces</h3>
-              <p>Gives sonic work its own atmosphere instead of treating it like an extra section on a single page.</p>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <section class="section panel">
-        <div class="split-layout">
-          <div class="copy-block" data-reveal="right">
-            <p class="eyebrow">Direction</p>
-            <h2 class="section-title">Modern, atmospheric, and flexible enough for future content.</h2>
-            <p class="section-copy">
-              The whole site now behaves like a small digital studio. You can add repos, mockups, and audio embeds
-              later without needing to redesign the structure every time you update the portfolio.
-            </p>
+            <span class="cat-badge">Pinned builds</span>
           </div>
-
-          <div class="stack-grid" data-reveal="left">
-            <article class="mini-panel">
-              <p class="card-kicker">Landing</p>
-              <h3>Strong first impression</h3>
-              <p>Sets the brand tone and gives visitors a fast way into the work they care about most.</p>
-            </article>
-
-            <article class="mini-panel">
-              <p class="card-kicker">System</p>
-              <h3>Shared visual language</h3>
-              <p>Common typography, gradients, navigation, and motion keep every page cohesive.</p>
-            </article>
-
-            <article class="mini-panel">
-              <p class="card-kicker">Ready</p>
-              <h3>Easy to personalize</h3>
-              <p>Replace placeholders with screenshots, cover art, repo names, and real links whenever you want.</p>
-            </article>
+          <div class="cat-body">
+            <p class="cat-kicker">Coding</p>
+            <h3>Projects, systems &amp; front-end work</h3>
+            <p>GitHub repositories, product experiments, technical storytelling and polished builds.</p>
+            <span class="cat-arrow">Explore coding <span>→</span></span>
           </div>
-        </div>
-      </section>
+        </a>
 
-      <section class="section panel">
-        <div class="section-head" data-reveal>
-          <div>
-            <p class="eyebrow">Snapshots</p>
-            <h2 class="section-title">A homepage previewing the depth behind each section.</h2>
+        <!-- Design -->
+        <a class="cat-card" href="design.html" data-reveal data-delay="2">
+          <div class="cat-media cat-media-design" style="position:relative;">
+            <span class="d-frame d-frame-a"></span>
+            <span class="d-frame d-frame-b"></span>
+            <span class="d-frame d-frame-c"></span>
+            <span class="cat-badge">Visual archive</span>
           </div>
-          <p class="section-copy">
-            These cards make the landing page feel rich on its own while teasing the category pages behind it.
-          </p>
-        </div>
-
-        <div class="snapshot-grid">
-          <article class="snapshot-card" data-reveal="up">
-            <div class="snapshot-art snapshot-code"></div>
-            <div class="card-body">
-              <p class="card-kicker">Coding snapshot</p>
-              <h3>High-clarity project showcases</h3>
-              <p>Perfect for a pinned repo, a flagship build, or a technical case study with strong visuals.</p>
-            </div>
-          </article>
-
-          <article class="snapshot-card" data-reveal="up">
-            <div class="snapshot-art snapshot-design"></div>
-            <div class="card-body">
-              <p class="card-kicker">Design snapshot</p>
-              <h3>Gallery-first storytelling</h3>
-              <p>Made for posters, UI explorations, branding systems, or campaign imagery.</p>
-            </div>
-          </article>
-
-          <article class="snapshot-card" data-reveal="up">
-            <div class="snapshot-art snapshot-sound"></div>
-            <div class="card-body">
-              <p class="card-kicker">Sound snapshot</p>
-              <h3>Audio given its own atmosphere</h3>
-              <p>Waveforms, track cards, and generous spacing make the sound page feel intentional.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section panel contact-section" id="contact">
-        <div class="section-head" data-reveal>
-          <div>
-            <p class="eyebrow">Next step</p>
-            <h2 class="section-title">Now the structure is ready for your real work.</h2>
+          <div class="cat-body">
+            <p class="cat-kicker">Design</p>
+            <h3>Visual systems, mockups &amp; image-led projects</h3>
+            <p>Posters, interfaces, branding systems and gallery-style visual storytelling.</p>
+            <span class="cat-arrow">Explore design <span>→</span></span>
           </div>
-          <p class="section-copy">
-            Next we can plug in your actual GitHub pinned repositories, project descriptions, imagery, and audio links.
-          </p>
-        </div>
+        </a>
 
-        <div class="contact-band" data-reveal="up">
-          <span>GitHub profile and repo links</span>
-          <span>Design images and case-study text</span>
-          <span>Sound embeds and release artwork</span>
-          <span>Email and social contact details</span>
-        </div>
-      </section>
-    </main>
+        <!-- Sound -->
+        <a class="cat-card" href="sound.html" data-reveal data-delay="3">
+          <div class="cat-media cat-media-sound">
+            <div class="waveform" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <span class="cat-badge">Audio work</span>
+          </div>
+          <div class="cat-body">
+            <p class="cat-kicker">Sound</p>
+            <h3>Scoring, production &amp; immersive sonic pieces</h3>
+            <p>Original compositions, sound design experiments and ambient soundscapes.</p>
+            <span class="cat-arrow">Explore sound <span>→</span></span>
+          </div>
+        </a>
+      </div>
+    </section>
 
+    <!-- ── Feature split ── -->
+    <section class="feature-panel glass" data-reveal aria-label="Direction">
+      <div class="feature-copy">
+        <p class="section-label">Direction</p>
+        <h2>A small digital studio, built to grow.</h2>
+        <p>
+          The whole site is structured like a studio. Add repos, mockups, and audio embeds whenever you want —
+          without having to redesign anything. The system handles it.
+        </p>
+        <div class="status-dot">Available for projects</div>
+      </div>
+      <div class="feature-visual media-green media-grid-bg">
+        <div style="text-align:center;display:grid;gap:16px;place-items:center;padding:32px;">
+          <div class="waveform" style="height:80px;" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <p style="font-family:var(--font-display);font-size:1.3rem;color:var(--lime);">Creative &amp; Technical</p>
+          <p style="font-size:0.82rem;color:var(--text-muted);">Code · Design · Sound</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Mini panels ── -->
+    <section class="section glass" aria-label="Approach">
+      <div class="section-header">
+        <div data-reveal>
+          <p class="section-label">Approach</p>
+          <h2 class="section-title">Built for quality, made to last.</h2>
+        </div>
+      </div>
+      <div class="mini-grid">
+        <div class="mini-card" data-reveal data-delay="1">
+          <span class="mini-icon">🧠</span>
+          <h4>Intentional design</h4>
+          <p>Every layout decision, color choice, and animation has a reason behind it.</p>
+        </div>
+        <div class="mini-card" data-reveal data-delay="2">
+          <span class="mini-icon">⚡</span>
+          <h4>Fast &amp; clean code</h4>
+          <p>Semantic HTML, modular CSS, and minimal JS. No frameworks when not needed.</p>
+        </div>
+        <div class="mini-card" data-reveal data-delay="3">
+          <span class="mini-icon">🎧</span>
+          <h4>Sonic depth</h4>
+          <p>Sound is treated as a primary medium — not an afterthought or bonus section.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section class="section glass contact-section" id="contact" aria-label="Contact">
+      <div data-reveal>
+        <p class="section-label">Next step</p>
+        <h2 class="section-title" style="margin-bottom:16px;">Let's build something.</h2>
+        <p style="color:var(--text-muted);max-width:52ch;line-height:1.7;margin-bottom:28px;">
+          Ready to connect the dots with your real content — GitHub pinned repos, project imagery, audio links, and your
+          contact details.
+        </p>
+      </div>
+      <div class="contact-chips" data-reveal>
+        <a class="contact-chip" href="#">📦 GitHub profile</a>
+        <a class="contact-chip" href="#">🖼 Design images</a>
+        <a class="contact-chip" href="#">🎵 Sound embeds</a>
+        <a class="contact-chip" href="#">✉️ Email</a>
+        <a class="contact-chip" href="#">🐦 Twitter / X</a>
+        <a class="contact-chip" href="#">🔗 LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- ── Footer ── -->
     <footer class="site-footer">
-      <p>Valentin Creative Portfolio</p>
-      <div class="footer-links">
+      <span class="footer-brand">Valentin · Creative Portfolio</span>
+      <nav class="footer-nav" aria-label="Footer">
         <a href="index.html">Home</a>
         <a href="coding.html">Coding</a>
         <a href="design.html">Design</a>
         <a href="sound.html">Sound</a>
-      </div>
-      <p class="footer-note">Built as a multi-page portfolio. <span data-year></span></p>
+      </nav>
+      <p class="footer-note">Built with care · <span data-year></span></p>
     </footer>
+
   </div>
 </body>
+
 </html>

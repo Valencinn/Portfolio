@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Valentin — Sound design, music production, and sonic compositions.">
+    <title>Sound — Valentin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <!-- ── Header ── -->
+        <header class="site-header">
+            <a class="brand" href="index.html">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span class="brand-copy">
+                    <strong>Valentin</strong>
+                    <small>Creative Portfolio</small>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="coding.html">Coding</a>
+                <a class="nav-link" href="design.html">Design</a>
+                <a class="nav-link" href="sound.html">Sound</a>
+            </nav>
+        </header>
+
+        <!-- ── Sub-hero ── -->
+        <section class="sub-hero glass" aria-label="Sound hero">
+            <div class="sub-hero-accent" aria-hidden="true" style="background:
+        radial-gradient(ellipse 65% 55% at 50% -5%, rgba(184,255,132,0.14), transparent 55%),
+        radial-gradient(ellipse 50% 45% at 5% 90%, rgba(144,200,240,0.09), transparent 50%),
+        radial-gradient(ellipse 40% 35% at 95% 80%, rgba(233,196,106,0.08), transparent 50%);">
+            </div>
+            <div style="position:relative;z-index:1;">
+                <p class="hero-eyebrow">Sound</p>
+                <h1 data-reveal>Listen to<br><em style="font-style:normal;color:var(--sky);">the work.</em></h1>
+                <p data-reveal data-delay="1"
+                    style="font-size:1.05rem;color:var(--text-muted);max-width:52ch;line-height:1.7;margin-top:16px;">
+                    Original compositions, ambient soundscapes, film scoring, and production experiments.
+                    Sound as its own expressive language — not background noise.
+                </p>
+                <div style="margin-top:28px;" data-reveal data-delay="2">
+                    <div class="waveform" aria-hidden="true" style="height:60px;margin-bottom:20px;">
+                        <span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                        <a class="btn btn-primary" href="#tracks" style="background:var(--sky);color:#080e14;">Browse
+                            tracks ↓</a>
+                        <div class="status-dot" style="align-self:center;">Available for scoring</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Featured track ── -->
+        <section class="feature-panel glass" data-reveal aria-label="Featured track">
+            <div class="feature-copy">
+                <p class="section-label">Featured</p>
+                <h2>Liminal — An ambient suite.</h2>
+                <p>
+                    A 22-minute ambient suite recorded over six months. Sparse piano, granular synthesis, and
+                    field recordings from three different countries woven into a single continuous piece.
+                </p>
+                <div class="work-meta" style="margin-top:4px;">
+                    <span class="pill">Ambient</span>
+                    <span class="pill">22 min</span>
+                    <span class="pill">2024</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:16px;margin-top:20px;">
+                    <button class="play-btn" aria-label="Play Liminal">▶</button>
+                    <div>
+                        <p style="font-size:0.85rem;font-weight:600;">Liminal (Full Suite)</p>
+                        <p style="font-size:0.78rem;color:var(--text-muted);">22:14 · Ambient / Experimental</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-visual" style="background:
+      radial-gradient(ellipse 70% 60% at 50% 50%, rgba(144,200,240,0.15), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 20% 20%, rgba(184,255,132,0.1), transparent 50%),
+      #0a1018;min-height:280px;">
+                <div style="padding:32px;display:grid;place-items:center;gap:20px;width:100%;">
+                    <div class="waveform" style="height:100px;gap:8px;" aria-hidden="true">
+                        <span style="width:8px;"></span><span style="width:8px;"></span><span style="width:8px;"></span>
+                        <span style="width:8px;"></span><span style="width:8px;"></span><span style="width:8px;"></span>
+                        <span style="width:8px;"></span><span style="width:8px;"></span><span style="width:8px;"></span>
+                        <span style="width:8px;"></span>
+                    </div>
+                    <div
+                        style="display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-faint);">
+                        <span>0:00</span>
+                        <div style="flex:1;height:2px;background:var(--line);border-radius:2px;position:relative;">
+                            <div
+                                style="position:absolute;left:0;top:0;height:100%;width:35%;background:var(--sky);border-radius:2px;">
+                            </div>
+                        </div>
+                        <span>22:14</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Track grid ── -->
+        <section class="section glass" id="tracks" aria-label="Track listing">
+            <div class="section-header">
+                <div data-reveal>
+                    <p class="section-label">Catalogue</p>
+                    <h2 class="section-title">All tracks.</h2>
+                </div>
+            </div>
+
+            <div class="sound-grid">
+                <!-- Track 1 -->
+                <div class="sound-card" data-reveal>
+                    <div class="track-cover"
+                        style="background:radial-gradient(circle at 40% 30%,rgba(184,255,132,0.2),transparent 50%),#0a100a;">
+                        <div class="mini-wave" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="track-info">
+                        <p class="track-cat">Ambient · Electronic</p>
+                        <h3>Haze</h3>
+                        <p>A slow-moving drone piece built from layered synthesizer pads and delayed acoustic guitar.
+                        </p>
+                    </div>
+                    <div class="track-footer">
+                        <button class="play-btn" style="width:38px;height:38px;" aria-label="Play Haze">▶</button>
+                        <span class="track-dur">7:42</span>
+                    </div>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="sound-card" data-reveal data-delay="1">
+                    <div class="track-cover"
+                        style="background:radial-gradient(circle at 60% 40%,rgba(144,200,240,0.22),transparent 50%),#080e14;">
+                        <div class="mini-wave" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="track-info">
+                        <p class="track-cat">Orchestral · Score</p>
+                        <h3>Meridian</h3>
+                        <p>Short-film score for a documentary about long-distance migration. Strings, choir, and field
+                            recordings.</p>
+                    </div>
+                    <div class="track-footer">
+                        <button class="play-btn" style="width:38px;height:38px;background:var(--sky);"
+                            aria-label="Play Meridian">▶</button>
+                        <span class="track-dur">4:18</span>
+                    </div>
+                </div>
+
+                <!-- Track 3 -->
+                <div class="sound-card" data-reveal data-delay="2">
+                    <div class="track-cover"
+                        style="background:radial-gradient(circle at 50% 60%,rgba(233,196,106,0.2),transparent 50%),#100e06;">
+                        <div class="mini-wave" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="track-info">
+                        <p class="track-cat">Experimental · Noise</p>
+                        <h3>Static Garden</h3>
+                        <p>Harsh noise meets melodic structure. Textural collage built from degraded cassette recordings
+                            and granular synthesis.</p>
+                    </div>
+                    <div class="track-footer">
+                        <button class="play-btn" style="width:38px;height:38px;background:var(--amber);"
+                            aria-label="Play Static Garden">▶</button>
+                        <span class="track-dur">11:03</span>
+                    </div>
+                </div>
+
+                <!-- Track 4 -->
+                <div class="sound-card" data-reveal>
+                    <div class="track-cover"
+                        style="background:radial-gradient(circle at 30% 50%,rgba(244,160,176,0.2),transparent 50%),#140a0e;">
+                        <div class="mini-wave" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="track-info">
+                        <p class="track-cat">Piano · Minimal</p>
+                        <h3>Salt</h3>
+                        <p>Solo piano recorded in a 200-year-old church. Sparse, unhurried, and deeply imperfect.</p>
+                    </div>
+                    <div class="track-footer">
+                        <button class="play-btn" style="width:38px;height:38px;background:var(--rose);"
+                            aria-label="Play Salt">▶</button>
+                        <span class="track-dur">3:55</span>
+                    </div>
+                </div>
+
+                <!-- Track 5 -->
+                <div class="sound-card" data-reveal data-delay="1">
+                    <div class="track-cover"
+                        style="background:radial-gradient(circle at 70% 30%,rgba(180,150,255,0.2),transparent 50%),#0c0a14;">
+                        <div class="mini-wave" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="track-info">
+                        <p class="track-cat">Electronic · Club</p>
+                        <h3>Vortex</h3>
+                        <p>A 135 BPM club track built around a single bass motif, evolving over 8 minutes into something
+                            unrecognizable.</p>
+                    </div>
+                    <div class="track-footer">
+                        <button class="play-btn" style="width:38px;height:38px;background:rgba(180,150,255,0.9);"
+                            aria-label="Play Vortex">▶</button>
+                        <span class="track-dur">8:20</span>
+                    </div>
+                </div>
+
+                <!-- Track 6 -->
+                <div class="sound-card" data-reveal data-delay="2">
+                    <div class="track-cover"
+                        style="background:radial-gradient(circle at 50% 50%,rgba(184,255,132,0.18),transparent 50%),radial-gradient(circle at 10% 10%,rgba(144,200,240,0.1),transparent 40%),#080e08;">
+                        <div class="mini-wave" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="track-info">
+                        <p class="track-cat">Ambient · Field recording</p>
+                        <h3>Estuary</h3>
+                        <p>Pure field recording from a tidal estuary at dawn. No synthesis, no instruments — only what
+                            was there.</p>
+                    </div>
+                    <div class="track-footer">
+                        <button class="play-btn" style="width:38px;height:38px;" aria-label="Play Estuary">▶</button>
+                        <span class="track-dur">18:44</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Process ── -->
+        <section class="section glass" aria-label="Sound approach">
+            <div data-reveal>
+                <p class="section-label">Approach</p>
+                <h2 class="section-title" style="margin-bottom:28px;">How I work with sound.</h2>
+            </div>
+            <div class="mini-grid">
+                <div class="mini-card" data-reveal>
+                    <span class="mini-icon">🎹</span>
+                    <h4>Composition</h4>
+                    <p>Melody, harmony, and rhythm as a starting point — then taken apart and reassembled into something
+                        new.</p>
+                </div>
+                <div class="mini-card" data-reveal data-delay="1">
+                    <span class="mini-icon">🎛</span>
+                    <h4>Production</h4>
+                    <p>Ableton Live, Bitwig, hardware synths, and a lot of deliberate restraint over what goes in and
+                        what stays out.</p>
+                </div>
+                <div class="mini-card" data-reveal data-delay="2">
+                    <span class="mini-icon">🎧</span>
+                    <h4>Mixing</h4>
+                    <p>Space, depth, and dynamics. A mix should feel as good as it sounds — and sound as good as it
+                        feels.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Footer ── -->
+        <footer class="site-footer">
+            <span class="footer-brand">Valentin · Creative Portfolio</span>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="index.html">Home</a>
+                <a href="coding.html">Coding</a>
+                <a href="design.html">Design</a>
+                <a href="sound.html">Sound</a>
+            </nav>
+            <p class="footer-note">Built with care · <span data-year></span></p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

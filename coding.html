@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Valentin — Coding projects, front-end builds and GitHub repositories.">
+    <title>Coding — Valentin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <!-- ── Header ── -->
+        <header class="site-header">
+            <a class="brand" href="index.html">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span class="brand-copy">
+                    <strong>Valentin</strong>
+                    <small>Creative Portfolio</small>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="coding.html">Coding</a>
+                <a class="nav-link" href="design.html">Design</a>
+                <a class="nav-link" href="sound.html">Sound</a>
+            </nav>
+        </header>
+
+        <!-- ── Sub-hero ── -->
+        <section class="sub-hero glass" aria-label="Coding hero">
+            <div class="sub-hero-accent" aria-hidden="true" style="background:
+        radial-gradient(ellipse 60% 55% at 90% 10%, rgba(184,255,132,0.13), transparent 55%),
+        radial-gradient(ellipse 45% 40% at 10% 90%, rgba(144,200,240,0.09), transparent 50%);">
+            </div>
+            <div style="position:relative;z-index:1;">
+                <p class="hero-eyebrow">Coding</p>
+                <h1 data-reveal>Projects &amp;<br><em style="font-style:normal;color:var(--lime);">builds.</em></h1>
+                <p data-reveal data-delay="1"
+                    style="font-size:1.05rem;color:var(--text-muted);max-width:52ch;line-height:1.7;margin-top:16px;">
+                    Front-end experiments, full-stack projects, open-source tools, and production-grade interfaces.
+                    Each project is a chance to build something better than the last.
+                </p>
+                <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;" data-reveal data-delay="2">
+                    <a class="btn btn-primary" href="https://github.com/" target="_blank" rel="noopener">View on GitHub
+                        ↗</a>
+                    <div class="status-dot" style="align-self:center;">Open to collaboration</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Pinned projects ── -->
+        <section class="section glass" aria-label="Pinned projects">
+            <div class="section-header">
+                <div data-reveal>
+                    <p class="section-label">Pinned</p>
+                    <h2 class="section-title">Featured projects.</h2>
+                </div>
+                <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener" data-reveal="right">
+                    All repos ↗
+                </a>
+            </div>
+
+            <div class="work-grid featured">
+                <!-- Large card -->
+                <div class="work-card" data-reveal>
+                    <div class="work-media work-media-tall">
+                        <div class="work-media-inner media-green media-grid-bg">
+                            <div style="display:grid;gap:14px;width:100%;max-width:300px;">
+                                <div class="win-dots"><span class="win-dot"></span><span class="win-dot"></span><span
+                                        class="win-dot"></span></div>
+                                <div class="code-lines">
+                                    <span class="code-line accent l-long"></span>
+                                    <span class="code-line l-med"></span>
+                                    <span class="code-line l-short"></span>
+                                    <span class="code-line accent l-long"></span>
+                                    <span class="code-line l-med"></span>
+                                    <span class="code-line l-long"></span>
+                                    <span class="code-line l-short"></span>
+                                    <span class="code-line l-med"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="work-badge">⭐ Flagship</span>
+                    </div>
+                    <div class="work-body">
+                        <p class="work-tag">Full-stack · TypeScript</p>
+                        <h3>Project Alpha — A production-ready dashboard</h3>
+                        <p>A complete admin dashboard built with TypeScript and a Node backend. Features real-time
+                            updates, role-based auth, and a design system built from scratch.</p>
+                        <div class="work-meta">
+                            <span class="pill">TypeScript</span>
+                            <span class="pill">Node.js</span>
+                            <span class="pill">PostgreSQL</span>
+                            <span class="pill">CSS Modules</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stack of two -->
+                <div style="display:grid;gap:14px;">
+                    <div class="work-card" data-reveal data-delay="1">
+                        <div class="work-media">
+                            <div class="work-media-inner media-blue media-grid-bg">
+                                <div class="waveform" style="height:60px;" aria-hidden="true">
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                            <span class="work-badge">Open source</span>
+                        </div>
+                        <div class="work-body">
+                            <p class="work-tag">Library · JavaScript</p>
+                            <h3>Wave.js — Audio visualizer library</h3>
+                            <p>A lightweight canvas-based audio visualizer. Plug in any audio source and get animated
+                                waveforms instantly.</p>
+                            <div class="work-meta">
+                                <span class="pill">Vanilla JS</span>
+                                <span class="pill">Canvas API</span>
+                                <span class="pill">Web Audio</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="work-card" data-reveal data-delay="2">
+                        <div class="work-media">
+                            <div class="work-media-inner media-purple media-grid-bg">
+                                <div style="text-align:center;">
+                                    <p
+                                        style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-muted);margin-bottom:8px;">
+                                        npm install @val/cli</p>
+                                    <p
+                                        style="font-family:var(--font-display);font-size:1.2rem;color:rgba(180,150,255,0.9);">
+                                        CLI Tools</p>
+                                </div>
+                            </div>
+                            <span class="work-badge">CLI</span>
+                        </div>
+                        <div class="work-body">
+                            <p class="work-tag">Tooling · Node.js</p>
+                            <h3>Val CLI — Developer scaffolding tool</h3>
+                            <p>A command-line tool for spinning up front-end projects with opinionated defaults and
+                                smart defaults.</p>
+                            <div class="work-meta">
+                                <span class="pill">Node.js</span>
+                                <span class="pill">Commander</span>
+                                <span class="pill">Inquirer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── More projects ── -->
+        <section class="section glass" aria-label="More projects">
+            <div class="section-header" data-reveal>
+                <div>
+                    <p class="section-label">More work</p>
+                    <h2 class="section-title">Other projects.</h2>
+                </div>
+            </div>
+            <div class="work-grid">
+                <div class="work-card" data-reveal>
+                    <div class="work-media">
+                        <div class="work-media-inner media-amber media-grid-bg">
+                            <p
+                                style="font-family:var(--font-display);font-size:1.4rem;color:var(--amber);text-align:center;">
+                                API</p>
+                        </div>
+                    </div>
+                    <div class="work-body">
+                        <p class="work-tag">Back-end · Python</p>
+                        <h3>REST API boilerplate</h3>
+                        <p>A FastAPI boilerplate with JWT auth, CORS, rate limiting, and PostgreSQL ORM included out of
+                            the box.</p>
+                        <div class="work-meta"><span class="pill">Python</span><span class="pill">FastAPI</span><span
+                                class="pill">SQLAlchemy</span></div>
+                    </div>
+                </div>
+
+                <div class="work-card" data-reveal data-delay="1">
+                    <div class="work-media">
+                        <div class="work-media-inner media-rose media-grid-bg">
+                            <p
+                                style="font-family:var(--font-display);font-size:1.4rem;color:var(--rose);text-align:center;">
+                                UI Kit</p>
+                        </div>
+                    </div>
+                    <div class="work-body">
+                        <p class="work-tag">Front-end · CSS</p>
+                        <h3>Glass UI component kit</h3>
+                        <p>A CSS-only glassmorphism component library with dark mode, custom properties, and zero
+                            dependencies.</p>
+                        <div class="work-meta"><span class="pill">HTML</span><span class="pill">CSS</span><span
+                                class="pill">Vanilla JS</span></div>
+                    </div>
+                </div>
+
+                <div class="work-card" data-reveal data-delay="2">
+                    <div class="work-media">
+                        <div class="work-media-inner media-green media-grid-bg">
+                            <p
+                                style="font-family:var(--font-display);font-size:1.4rem;color:var(--lime);text-align:center;">
+                                3D</p>
+                        </div>
+                    </div>
+                    <div class="work-body">
+                        <p class="work-tag">WebGL · Three.js</p>
+                        <h3>Generative 3D backgrounds</h3>
+                        <p>A collection of atmospheric 3D scenes built with Three.js — mesh gradients, particle fields,
+                            and fluid simulations.</p>
+                        <div class="work-meta"><span class="pill">Three.js</span><span class="pill">GLSL</span><span
+                                class="pill">WebGL</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Stack ── -->
+        <section class="section glass" aria-label="Tech stack">
+            <div data-reveal>
+                <p class="section-label">Stack</p>
+                <h2 class="section-title" style="margin-bottom:28px;">Tools of the trade.</h2>
+            </div>
+            <div class="mini-grid">
+                <div class="mini-card" data-reveal>
+                    <span class="mini-icon">🌐</span>
+                    <h4>Front-end</h4>
+                    <p>HTML, CSS, JavaScript, TypeScript, React, and vanilla everything-first.</p>
+                </div>
+                <div class="mini-card" data-reveal data-delay="1">
+                    <span class="mini-icon">⚙️</span>
+                    <h4>Back-end</h4>
+                    <p>Node.js, Python (FastAPI / Flask), REST APIs, PostgreSQL, and SQLite.</p>
+                </div>
+                <div class="mini-card" data-reveal data-delay="2">
+                    <span class="mini-icon">🛠</span>
+                    <h4>Tooling</h4>
+                    <p>Git, Vite, esbuild, Vercel, Docker basics, and Linux CLI every day.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Footer ── -->
+        <footer class="site-footer">
+            <span class="footer-brand">Valentin · Creative Portfolio</span>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="index.html">Home</a>
+                <a href="coding.html">Coding</a>
+                <a href="design.html">Design</a>
+                <a href="sound.html">Sound</a>
+            </nav>
+            <p class="footer-note">Built with care · <span data-year></span></p>
+        </footer>
+
+    </div>
+</body>
+
+</html>
