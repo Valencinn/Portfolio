@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ↓ REEMPLAZÁ con tu nombre y descripción real -->
+    <meta name="description"
+        content="Valentin Sierra — Desarrollador creativo, diseñador y compositor. Buenos Aires, Argentina.">
+    <title>About — Valentin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script defer src="main.js"></script>
+
+    <style>
+        /* ════════════════════════════════════════
+       ABOUT PAGE — Extended styles
+       ════════════════════════════════════════ */
+
+        /* ── Profile layout ── */
+        .about-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 28px;
+            align-items: start;
+        }
+
+        /* ── Profile card (sidebar) ── */
+        .profile-card {
+            border: 1px solid var(--line);
+            border-radius: var(--r-xl);
+            background: var(--surface);
+            overflow: hidden;
+            position: sticky;
+            top: 90px;
+            /* queda fija mientras scrolleás */
+        }
+
+        .profile-avatar-wrap {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .profile-avatar-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        /*
+      ════════════════════════════════════════════════════
+      FOTO DE PERFIL — CÓMO AGREGAR
+      ════════════════════════════════════════════════════
+      1. Guardá tu foto en: ./assets/images/avatar.jpg
+         (recomendado: cuadrada o casi cuadrada, mínimo 400x400px)
+
+      2. Reemplazá el bloque .avatar-placeholder con:
+         <img
+           src="./assets/images/avatar.jpg"
+           alt="Foto de perfil de Valentin"
+           class="profile-real-img"
+         />
+
+      3. El CSS .profile-real-img ya está definido abajo.
+      ════════════════════════════════════════════════════
+    */
+        .profile-real-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .avatar-placeholder {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            background:
+                radial-gradient(circle at 40% 30%, rgba(184, 255, 132, 0.18), transparent 50%),
+                radial-gradient(circle at 70% 75%, rgba(144, 200, 240, 0.14), transparent 45%),
+                #0a120a;
+        }
+
+        .avatar-placeholder-inner {
+            text-align: center;
+            display: grid;
+            gap: 8px;
+            place-items: center;
+        }
+
+        .avatar-initials {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: conic-gradient(from 145deg at 35% 35%,
+                    var(--lime) 0deg, var(--sky) 120deg, var(--amber) 240deg, var(--lime) 360deg);
+            display: grid;
+            place-items: center;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: #080f08;
+            box-shadow: 0 12px 32px rgba(184, 255, 132, 0.3);
+        }
+
+        .avatar-placeholder-text {
+            font-size: 0.7rem;
+            color: var(--text-faint);
+            font-family: var(--font-mono);
+        }
+
+        .profile-info {
+            padding: 20px 22px 24px;
+            display: grid;
+            gap: 16px;
+        }
+
+        .profile-name-block {
+            display: grid;
+            gap: 3px;
+        }
+
+        .profile-name {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .profile-title {
+            font-size: 0.8rem;
+            color: var(--lime);
+            letter-spacing: 0.08em;
+        }
+
+        .profile-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .profile-divider {
+            height: 1px;
+            background: var(--line);
+        }
+
+        .profile-links {
+            display: grid;
+            gap: 8px;
+        }
+
+        .profile-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 12px;
+            border: 1px solid var(--line);
+            border-radius: var(--r-sm);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            background: var(--surface-lo);
+            transition: all var(--t-fast);
+        }
+
+        .profile-link:hover {
+            border-color: var(--line-hi);
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateX(3px);
+        }
+
+        .profile-link-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+            display: grid;
+            place-items: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .profile-link span:last-child {
+            margin-left: auto;
+            color: var(--text-faint);
+            font-size: 0.8rem;
+        }
+
+        /* ── Main content ── */
+        .about-main {
+            display: grid;
+            gap: 20px;
+        }
+
+        /* ── Bio section ── */
+        .bio-section {
+            padding: 32px 36px;
+        }
+
+        .bio-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            max-width: 65ch;
+        }
+
+        .bio-text strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .bio-text em {
+            font-style: normal;
+            color: var(--lime);
+        }
+
+        /* ── Skills ── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .skill-block {
+            padding: 18px 16px;
+            border: 1px solid var(--line);
+            border-radius: var(--r-md);
+            background: var(--surface-lo);
+            display: grid;
+            gap: 12px;
+            transition: border-color var(--t-fast), background var(--t-fast);
+        }
+
+        .skill-block:hover {
+            border-color: var(--line-hi);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .skill-block-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-emoji {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .skill-block-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .skill-tag {
+            padding: 3px 9px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--r-pill);
+            font-size: 0.7rem;
+            color: var(--text-faint);
+            background: var(--surface-lo);
+        }
+
+        /* ── Timeline / Journey ── */
+        .timeline {
+            display: grid;
+            gap: 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 20px;
+            padding-bottom: 28px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 39px;
+            top: 28px;
+            bottom: 0;
+            width: 1px;
+            background: var(--line);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-year {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--lime);
+            font-weight: 600;
+            padding-top: 4px;
+            text-align: right;
+            padding-right: 16px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 32px;
+            top: 6px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 2px solid var(--lime);
+            box-shadow: 0 0 0 3px rgba(184, 255, 132, 0.12);
+        }
+
+        .timeline-content {
+            display: grid;
+            gap: 4px;
+        }
+
+        .timeline-role {
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .timeline-org {
+            font-size: 0.8rem;
+            color: var(--lime);
+        }
+
+        .timeline-desc {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-top: 2px;
+        }
+
+        /* ── CTA section ── */
+        .about-cta {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 24px;
+            align-items: center;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1000px) {
+            .about-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card {
+                position: static;
+            }
+
+            .profile-avatar-wrap {
+                height: 220px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-cta {
+                grid-template-columns: 1fr;
+            }
+
+            .bio-section {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <!-- ── Header ── -->
+        <header class="site-header">
+            <a class="brand" href="index.html">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span class="brand-copy">
+                    <strong>Valentin</strong>
+                    <small>Creative Portfolio</small>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="coding.html">Coding</a>
+                <a class="nav-link" href="design.html">Design</a>
+                <a class="nav-link" href="sound.html">Sound</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <!-- ── Sub-hero ── -->
+        <section class="sub-hero glass" aria-label="About hero">
+            <div class="sub-hero-accent" aria-hidden="true" style="background:
+        radial-gradient(ellipse 55% 50% at 90% 10%, rgba(184,255,132,0.12), transparent 55%),
+        radial-gradient(ellipse 45% 40% at 10% 85%, rgba(144,200,240,0.09), transparent 50%);">
+            </div>
+            <div style="position:relative;z-index:1;max-width:70ch;">
+                <p class="hero-eyebrow">About</p>
+                <h1 data-reveal>
+                    <!-- ↓ REEMPLAZÁ con tu nombre real -->
+                    Hi, I'm<br><em style="font-style:normal;color:var(--lime);">Valentin.</em>
+                </h1>
+                <p data-reveal data-delay="1"
+                    style="font-size:1.05rem;color:var(--text-muted);max-width:52ch;line-height:1.7;margin-top:16px;">
+                    <!-- ↓ REEMPLAZÁ con tu tagline personal -->
+                    19 year old developer, designer, and composer from Buenos Aires.
+                    Building things at the intersection of code, visuals, and sound.
+                </p>
+                <div style="margin-top:24px;" data-reveal data-delay="2">
+                    <div class="status-dot">Available for projects · GMT-3</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Main layout: sidebar + content ── -->
+        <div class="about-layout">
+
+            <!-- ── Profile card (sticky sidebar) ── -->
+            <aside aria-label="Profile" data-reveal>
+                <div class="profile-card">
+
+                    <!-- Profile image -->
+                    <div class="profile-avatar-wrap">
+                        <!--
+              ════════════════════════════════════════════════════
+              FOTO DE PERFIL — REEMPLAZAR
+              ════════════════════════════════════════════════════
+              Opción A (con imagen real) — reemplazá el bloque
+              .avatar-placeholder con:
+
+              <img
+                src="./assets/images/avatar.jpg"
+                alt="Foto de perfil de Valentin Sierra"
+                class="profile-real-img"
+              />
+
+              Opción B — Placeholder (activo ahora):
+            -->
+                        <div class="avatar-placeholder">
+                            <div class="avatar-placeholder-inner">
+                                <!-- ↓ Cambiá las iniciales por las tuyas -->
+                                <div class="avatar-initials">VS</div>
+                                <span class="avatar-placeholder-text">avatar.jpg</span>
+                            </div>
+                        </div>
+                        <!-- Gradient overlay bottom -->
+                        <div style="position:absolute;bottom:0;left:0;right:0;height:60px;
+              background:linear-gradient(to top, var(--surface), transparent);"></div>
+                    </div>
+
+                    <div class="profile-info">
+                        <div class="profile-name-block">
+                            <!-- ↓ REEMPLAZÁ con tu nombre completo -->
+                            <h2 class="profile-name">Valentin Sierra</h2>
+                            <!-- ↓ REEMPLAZÁ con tu título o rol -->
+                            <span class="profile-title">Developer · Designer · Composer</span>
+                            <!-- ↓ REEMPLAZÁ con tu ciudad/país -->
+                            <span class="profile-location">
+                                <span>📍</span> Buenos Aires, Argentina
+                            </span>
+                        </div>
+
+                        <div class="profile-divider"></div>
+
+                        <nav class="profile-links" aria-label="Social links">
+                            <!-- ↓ REEMPLAZÁ cada href con tus links reales -->
+                            <a class="profile-link" href="https://github.com/Valencinn" target="_blank" rel="noopener">
+                                <div class="profile-link-icon" style="background:rgba(255,255,255,0.06);">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                                    </svg>
+                                </div>
+                                GitHub
+                                <span>↗</span>
+                            </a>
+
+                            <a class="profile-link" href="https://linkedin.com/in/valentinsierra" target="_blank"
+                                rel="noopener">
+                                <div class="profile-link-icon" style="background:rgba(10,102,194,0.14);">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#0a66c2">
+                                        <path
+                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                    </svg>
+                                </div>
+                                LinkedIn
+                                <span>↗</span>
+                            </a>
+
+                            <a class="profile-link" href="https://soundcloud.com/valencinn" target="_blank"
+                                rel="noopener">
+                                <div class="profile-link-icon" style="background:rgba(255,85,0,0.12);">
+                                    <span style="font-size:0.9rem;">🎵</span>
+                                </div>
+                                SoundCloud
+                                <span>↗</span>
+                            </a>
+
+                            <!--
+                ↓ REEMPLAZÁ el href con tu Behance real
+                Si no tenés Behance todavía, podés borrar este bloque.
+              -->
+                            <a class="profile-link" href="https://www.behance.net/TU-USUARIO" target="_blank"
+                                rel="noopener">
+                                <div class="profile-link-icon" style="background:rgba(0,90,255,0.12);">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#0057ff">
+                                        <path
+                                            d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.595.836 2.208 2.101 2.208.768 0 1.374-.306 1.695-.872l2.959.893zm-5.68-3.7c-.06-1.095-.57-1.842-1.69-1.842-1.023 0-1.68.663-1.773 1.842H18.046zM9.764 7.495c1.358.053 2.437.355 3.729-.604.465-.34.922-1.078.922-1.838C14.415 3.299 12.986 3 12.014 3H3v18h9.455c1.068 0 2.152-.243 2.889-.688 1.092-.67 1.59-1.744 1.59-2.976 0-2.058-1.213-3.066-2.916-3.297-1.195-.16-1.78-.305-2.334-.564l.08.02zM7.006 5.63H11.48c1.19 0 1.919.532 1.919 1.507 0 1.077-.729 1.664-1.919 1.664H7.006V5.63zm0 9.274H11.9c1.362 0 2.139.617 2.139 1.747 0 1.145-.777 1.748-2.139 1.748H7.006v-3.495z" />
+                                    </svg>
+                                </div>
+                                Behance
+                                <span>↗</span>
+                            </a>
+
+                            <!-- ↓ REEMPLAZÁ con tu email real -->
+                            <a class="profile-link" href="mailto:valencinn@example.com">
+                                <div class="profile-link-icon" style="background:rgba(184,255,132,0.1);">
+                                    <span style="font-size:0.9rem;">✉️</span>
+                                </div>
+                                <!-- ↓ REEMPLAZÁ con tu email -->
+                                valencinn@example.com
+                                <span>↗</span>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- ── Main content ── -->
+            <div class="about-main">
+
+                <!-- Bio -->
+                <section class="section glass bio-section" aria-label="Biography" data-reveal>
+                    <p class="section-label">About me</p>
+                    <h2 class="section-title" style="margin-bottom:20px;">Who I am.</h2>
+
+                    <!-- ↓ REEMPLAZÁ todo este párrafo con tu bio real -->
+                    <p class="bio-text">
+                        Soy <strong>Valentin Sierra</strong>, un creativo de 19 años de
+                        <em>Buenos Aires, Argentina</em>. Me muevo en la intersección entre el código, el diseño
+                        visual y la música — tres disciplinas que para mí no son separadas, sino partes del mismo
+                        proceso de construcción.
+                    </p>
+                    <br>
+                    <!-- ↓ REEMPLAZÁ con más detalles sobre vos -->
+                    <p class="bio-text">
+                        Empecé programando por curiosidad y terminé fascinado por cómo el software puede ser tanto
+                        <strong>funcional como estético</strong>. Me interesan los proyectos que combinan
+                        pensamiento técnico con sensibilidad visual. También compongo música — principalmente
+                        ambient y electrónica experimental — porque el sonido tiene una forma de comunicar lo que
+                        el código y las imágenes no pueden.
+                    </p>
+                    <br>
+                    <!-- ↓ REEMPLAZÁ con tus valores o forma de trabajar -->
+                    <p class="bio-text">
+                        Actualmente estoy <em>aprendiendo y construyendo en paralelo</em> — proyectos reales que
+                        resolver, no ejercicios de clase. Creo que la mejor forma de crecer es hacer cosas que
+                        importen y no tener miedo de publicarlas aunque no estén perfectas.
+                    </p>
+                </section>
+
+                <!-- Skills -->
+                <section class="section glass" aria-label="Skills" data-reveal>
+                    <p class="section-label">Skills</p>
+                    <h2 class="section-title" style="margin-bottom:24px;">What I do.</h2>
+
+                    <div class="skills-grid">
+
+                        <!-- ↓ REEMPLAZÁ los tags con tus habilidades reales -->
+                        <div class="skill-block">
+                            <div class="skill-block-header">
+                                <span class="skill-emoji">💻</span>
+                                <span class="skill-block-title">Development</span>
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag">HTML</span>
+                                <span class="skill-tag">CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Lua</span>
+                                <!-- ↓ Agregá o quitá tags según tus habilidades -->
+                            </div>
+                        </div>
+
+                        <div class="skill-block">
+                            <div class="skill-block-header">
+                                <span class="skill-emoji">🎨</span>
+                                <span class="skill-block-title">Design</span>
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">Photoshop</span>
+                                <span class="skill-tag">Lightroom</span>
+                                <span class="skill-tag">Illustrator</span>
+                                <span class="skill-tag">UI/UX</span>
+                                <!-- ↓ Agregá o quitá tags según tus herramientas -->
+                            </div>
+                        </div>
+
+                        <div class="skill-block">
+                            <div class="skill-block-header">
+                                <span class="skill-emoji">🎵</span>
+                                <span class="skill-block-title">Music</span>
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Composición</span>
+                                <span class="skill-tag">Sound design</span>
+                                <span class="skill-tag">Ableton</span>
+                                <span class="skill-tag">Mixing</span>
+                                <!-- ↓ Agregá o quitá tags según tu experiencia musical -->
+                            </div>
+                        </div>
+
+                        <div class="skill-block">
+                            <div class="skill-block-header">
+                                <span class="skill-emoji">🧠</span>
+                                <span class="skill-block-title">AI & Algorithms</span>
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Minimax</span>
+                                <span class="skill-tag">Alpha-Beta</span>
+                                <span class="skill-tag">Game AI</span>
+                                <span class="skill-tag">Python</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-block">
+                            <div class="skill-block-header">
+                                <span class="skill-emoji">🛠</span>
+                                <span class="skill-block-title">Tools</span>
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">GitHub</span>
+                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag">VS Code</span>
+                                <span class="skill-tag">Vite</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-block">
+                            <div class="skill-block-header">
+                                <span class="skill-emoji">🌐</span>
+                                <span class="skill-block-title">Languages</span>
+                            </div>
+                            <div class="skill-tags">
+                                <!-- ↓ REEMPLAZÁ con tus idiomas reales y niveles -->
+                                <span class="skill-tag">Español — nativo</span>
+                                <span class="skill-tag">English — B2</span>
+                                <!-- Ejemplo: <span class="skill-tag">Italiano — A1</span> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Journey / Experience -->
+                <section class="section glass" aria-label="Journey" data-reveal>
+                    <p class="section-label">Journey</p>
+                    <h2 class="section-title" style="margin-bottom:28px;">My path so far.</h2>
+
+                    <div class="timeline">
+
+                        <!--
+              ════════════════════════════════════════════════════
+              TIMELINE — REEMPLAZAR CON TU RECORRIDO REAL
+              Agregá, quitá o modificá los ítems según tu historia.
+              Cada item tiene: año, rol, organización, descripción.
+              ════════════════════════════════════════════════════
+            -->
+
+                        <!-- Ítem más reciente primero -->
+                        <div class="timeline-item">
+                            <span class="timeline-year">2025</span>
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <!-- ↓ REEMPLAZÁ con tu rol/actividad actual -->
+                                <span class="timeline-role">Freelance — Creative Developer</span>
+                                <!-- ↓ REEMPLAZÁ con el nombre de la org/proyecto o "Personal" -->
+                                <span class="timeline-org">Proyectos propios · Remoto</span>
+                                <!-- ↓ REEMPLAZÁ con tu descripción -->
+                                <p class="timeline-desc">
+                                    Desarrollo de proyectos web, diseño de interfaces y composición musical de forma
+                                    independiente. Portfolio en construcción continua.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <span class="timeline-year">2024</span>
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <!-- ↓ REEMPLAZÁ con tu rol real -->
+                                <span class="timeline-role">Open Source — Mods de Garry's Mod</span>
+                                <span class="timeline-org">GitHub · @Valencinn</span>
+                                <p class="timeline-desc">
+                                    <!-- ↓ REEMPLAZÁ con tu descripción -->
+                                    Desarrollo y publicación de addons para Garry's Mod escritos en Lua. Primeros
+                                    proyectos
+                                    open source con feedback real de usuarios.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <span class="timeline-year">2024</span>
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <!-- ↓ REEMPLAZÁ -->
+                                <span class="timeline-role">Proyecto — checkers.ai</span>
+                                <span class="timeline-org">Personal · Python</span>
+                                <p class="timeline-desc">
+                                    <!-- ↓ REEMPLAZÁ -->
+                                    Implementación de IA para juego de damas usando algoritmos Minimax y Alpha-Beta
+                                    Pruning.
+                                    Primer proyecto de inteligencia artificial completo.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <span class="timeline-year">2023</span>
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <!-- ↓ REEMPLAZÁ -->
+                                <span class="timeline-role">Inicio — Desarrollo web y código</span>
+                                <span class="timeline-org">Self-taught · Online</span>
+                                <p class="timeline-desc">
+                                    <!-- ↓ REEMPLAZÁ con cómo empezaste -->
+                                    Comienzo del aprendizaje autodidacta en programación, diseño web y producción
+                                    musical.
+                                    Primeros proyectos personales publicados en GitHub.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!--
+              ↓ AGREGÁ más ítems si tenés más historia.
+              Copiá el bloque de arriba y modificalo.
+            -->
+
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <section class="section glass" aria-label="Contact CTA">
+                    <div class="about-cta" data-reveal>
+                        <div>
+                            <p class="section-label">Let's work together</p>
+                            <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:10px;">
+                                Got something in mind?
+                            </h2>
+                            <p style="color:var(--text-muted);max-width:48ch;line-height:1.7;font-size:0.95rem;">
+                                <!-- ↓ REEMPLAZÁ con tu mensaje de CTA -->
+                                Abierto a proyectos freelance, colaboraciones creativas y trabajo part-time.
+                                Respondo en menos de 48 horas.
+                            </p>
+                        </div>
+                        <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+                            <a class="btn btn-primary" href="contact.html">Contact me →</a>
+                            <a class="btn btn-ghost" href="https://github.com/Valencinn" target="_blank"
+                                rel="noopener">GitHub ↗</a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- ── Footer ── -->
+        <footer class="site-footer">
+            <span class="footer-brand">Valentin · Creative Portfolio</span>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="index.html">Home</a>
+                <a href="coding.html">Coding</a>
+                <a href="design.html">Design</a>
+                <a href="sound.html">Sound</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-note">Built with care · <span data-year></span></p>
+        </footer>
+
+    </div>
+</body>
+
+</html>
