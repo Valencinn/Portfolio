@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Valentin — Contacto. Mandame tu propuesta, idea o colaboración.">
+    <title>Contact — Valentin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script defer src="main.js"></script>
+
+    <style>
+        /* ── Contact form styles ── */
+        .contact-form {
+            display: grid;
+            gap: 18px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 8px;
+        }
+
+        .form-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 13px 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--line-hi);
+            border-radius: var(--r-md);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            transition: border-color var(--t-fast), background var(--t-fast), box-shadow var(--t-fast);
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--text-faint);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--lime);
+            background: rgba(184, 255, 132, 0.04);
+            box-shadow: 0 0 0 3px rgba(184, 255, 132, 0.1);
+        }
+
+        .form-select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a5750' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .form-select option {
+            background: #0e120e;
+            color: var(--text);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .form-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 32px;
+            background: var(--lime);
+            color: #080f08;
+            border: none;
+            border-radius: var(--r-pill);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);
+            box-shadow: 0 12px 30px rgba(184, 255, 132, 0.22);
+            width: fit-content;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 40px rgba(184, 255, 132, 0.38);
+        }
+
+        .form-submit:active {
+            transform: translateY(0);
+        }
+
+        .form-submit.sending {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: var(--text-faint);
+            line-height: 1.6;
+        }
+
+        /* ── Success state ── */
+        .form-success {
+            display: none;
+            padding: 28px;
+            border: 1px solid rgba(184, 255, 132, 0.25);
+            border-radius: var(--r-lg);
+            background: rgba(184, 255, 132, 0.06);
+            text-align: center;
+            gap: 12px;
+        }
+
+        .form-success.visible {
+            display: grid;
+        }
+
+        .form-success .success-icon {
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .form-success h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--lime);
+        }
+
+        .form-success p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* ── Social links ── */
+        .social-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 18px;
+            border: 1px solid var(--line);
+            border-radius: var(--r-md);
+            background: var(--surface-lo);
+            transition: border-color var(--t-fast), background var(--t-fast), transform var(--t-fast);
+        }
+
+        .social-link:hover {
+            border-color: var(--line-hi);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateX(4px);
+        }
+
+        .social-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .social-info {
+            display: grid;
+            gap: 1px;
+            flex: 1;
+        }
+
+        .social-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .social-handle {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .social-arrow {
+            color: var(--text-faint);
+            font-size: 0.85rem;
+            transition: color var(--t-fast);
+        }
+
+        .social-link:hover .social-arrow {
+            color: var(--lime);
+        }
+
+        /* ── Layout ── */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 20px;
+        }
+
+        @media (max-width: 860px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <!-- ── Header ── -->
+        <header class="site-header">
+            <a class="brand" href="index.html">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span class="brand-copy">
+                    <strong>Valentin</strong>
+                    <small>Creative Portfolio</small>
+                </span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="coding.html">Coding</a>
+                <a class="nav-link" href="design.html">Design</a>
+                <a class="nav-link" href="sound.html">Sound</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <!-- ── Sub-hero ── -->
+        <section class="sub-hero glass" aria-label="Contact hero">
+            <div class="sub-hero-accent" aria-hidden="true" style="background:
+        radial-gradient(ellipse 55% 50% at 85% 15%, rgba(184,255,132,0.12), transparent 55%),
+        radial-gradient(ellipse 45% 40% at 15% 85%, rgba(233,196,106,0.08), transparent 50%);">
+            </div>
+            <div style="position:relative;z-index:1;">
+                <p class="hero-eyebrow">Contacto</p>
+                <h1 data-reveal>Let's build<br><em style="font-style:normal;color:var(--lime);">something.</em></h1>
+                <p data-reveal data-delay="1"
+                    style="font-size:1.05rem;color:var(--text-muted);max-width:52ch;line-height:1.7;margin-top:16px;">
+                    Mandame tu propuesta, idea o consulta. Respondo en menos de 48 horas.
+                    Abierto a colaboraciones, freelance y proyectos creativos.
+                </p>
+                <div style="margin-top:20px;" data-reveal data-delay="2">
+                    <div class="status-dot">Disponible para proyectos</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Main contact layout ── -->
+        <div class="contact-layout">
+
+            <!-- ── Form ── -->
+            <section class="section glass" aria-label="Contact form">
+                <div data-reveal>
+                    <p class="section-label">Formulario</p>
+                    <h2 class="section-title" style="margin-bottom:8px;">Escribime.</h2>
+                    <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:28px;line-height:1.6;">
+                        Tu mensaje llega directo a mi mail personal. Sin intermediarios.
+                    </p>
+                </div>
+
+                <!--
+          ┌─────────────────────────────────────────────────────────┐
+          │  CONFIGURACIÓN DEL FORMULARIO                           │
+          │                                                         │
+          │  Este form usa Formspree (gratis hasta 50 msgs/mes).   │
+          │  Pasos:                                                 │
+          │  1. Entrá a https://formspree.io y creá una cuenta.    │
+          │  2. Creá un nuevo form y copiá tu Form ID.             │
+          │  3. Reemplazá "TU_FORM_ID" en el action de abajo.      │
+          │                                                         │
+          │  Alternativa: usá https://web3forms.com (también free) │
+          │  o cualquier servicio similar.                          │
+          │                                                         │
+          │  El mailto: de fallback manda directo pero sin estilo.  │
+          └─────────────────────────────────────────────────────────┘
+        -->
+                <form id="contact-form" class="contact-form" action="https://formspree.io/f/TU_FORM_ID" method="POST"
+                    data-reveal data-delay="1">
+                    <!-- Honeypot anti-spam (no tocar) -->
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                    <!-- Redirigir a página de gracias (opcional) -->
+                    <!-- <input type="hidden" name="_next" value="https://tu-dominio.com/gracias.html"> -->
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Nombre</label>
+                            <input class="form-input" type="text" id="name" name="name" placeholder="Tu nombre" required
+                                autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email</label>
+                            <input class="form-input" type="email" id="email" name="email" placeholder="tu@email.com"
+                                required autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="subject">Tipo de proyecto</label>
+                        <select class="form-select" id="subject" name="subject">
+                            <option value="" disabled selected>Seleccioná una opción...</option>
+                            <option value="Colaboración de código">💻 Colaboración de código</option>
+                            <option value="Diseño o identidad visual">🎨 Diseño o identidad visual</option>
+                            <option value="Composición o sound design">🎵 Composición o sound design</option>
+                            <option value="Proyecto multidisciplinar">🌐 Proyecto multidisciplinar</option>
+                            <option value="Consulta general">💬 Consulta general</option>
+                            <option value="Otro">✨ Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="message">Mensaje</label>
+                        <textarea class="form-textarea" id="message" name="message"
+                            placeholder="Contame tu idea, proyecto o propuesta. Cuanto más detalle, mejor puedo ayudarte."
+                            required></textarea>
+                    </div>
+
+                    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+                        <button type="submit" class="form-submit" id="submit-btn">
+                            <span>Enviar mensaje</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                        <p class="form-note">
+                            Sin spam. Tu info es solo para responder.
+                        </p>
+                    </div>
+                </form>
+
+                <!-- Success message (shown via JS) -->
+                <div class="form-success" id="form-success" role="alert">
+                    <span class="success-icon">✅</span>
+                    <h3>¡Mensaje enviado!</h3>
+                    <p>Gracias por escribir. Te respondo en menos de 48 hs.</p>
+                </div>
+            </section>
+
+            <!-- ── Social / contact links sidebar ── -->
+            <aside class="section glass" aria-label="Contact links" style="align-self:start;">
+                <div data-reveal>
+                    <p class="section-label">Redes</p>
+                    <h2 class="section-title" style="font-size:1.6rem;margin-bottom:24px;">Encontrame en.</h2>
+                </div>
+
+                <nav class="social-grid" data-reveal data-delay="1" aria-label="Social links">
+
+                    <!-- GitHub -->
+                    <a class="social-link" href="https://github.com/Valencinn" target="_blank" rel="noopener">
+                        <div class="social-icon" style="background:rgba(255,255,255,0.06);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                            </svg>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">GitHub</span>
+                            <span class="social-handle">@Valencinn</span>
+                        </div>
+                        <span class="social-arrow">↗</span>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a class="social-link" href="https://linkedin.com/in/valentinsierra" target="_blank" rel="noopener">
+                        <div class="social-icon" style="background:rgba(10,102,194,0.15);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#0a66c2" aria-hidden="true">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">LinkedIn</span>
+                            <span class="social-handle">in/valentinsierra</span>
+                        </div>
+                        <span class="social-arrow">↗</span>
+                    </a>
+
+                    <!-- SoundCloud -->
+                    <a class="social-link" href="https://soundcloud.com/valencinn" target="_blank" rel="noopener">
+                        <div class="social-icon" style="background:rgba(255,85,0,0.12);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#ff5500" aria-hidden="true">
+                                <path
+                                    d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c-.009-.06-.05-.1-.1-.1m-.899.828c-.06 0-.091.037-.104.094L0 14.479l.172 1.308c.013.06.045.094.104.094.058 0 .091-.034.104-.094l.199-1.308-.199-1.332c-.013-.057-.046-.094-.104-.094m1.81-.7c-.067 0-.12.05-.13.117l-.211 2.009.211 1.956c.01.07.063.117.13.117.066 0 .12-.047.13-.117l.243-1.956-.243-2.009c-.01-.067-.064-.117-.13-.117m.917-.237c-.078 0-.14.057-.148.135l-.185 2.246.185 2.15c.01.078.07.135.148.135.079 0 .14-.057.15-.135l.21-2.15-.21-2.246c-.01-.078-.071-.135-.15-.135m.933-.174c-.088 0-.16.065-.166.153l-.163 2.42.163 2.29c.006.088.078.154.166.154.088 0 .16-.066.165-.154l.185-2.29-.185-2.42c-.005-.088-.077-.153-.165-.153m.934-.128c-.099 0-.18.073-.183.172l-.143 2.548.143 2.408c.003.1.084.172.183.172.098 0 .179-.072.182-.172l.162-2.408-.162-2.548c-.003-.1-.084-.172-.182-.172m.944-.08c-.109 0-.198.08-.2.19l-.122 2.628.122 2.523c.002.11.091.19.2.19.11 0 .199-.08.2-.19l.138-2.523-.138-2.628c-.001-.11-.09-.19-.2-.19m.95-.044c-.12 0-.217.088-.218.208l-.102 2.672.102 2.634c.001.12.098.208.218.208.12 0 .217-.088.218-.208l.115-2.634-.115-2.672c-.001-.12-.098-.208-.218-.208m.961-.011c-.13 0-.235.096-.234.226l-.082 2.683.082 2.742c-.001.13.104.226.234.226.13 0 .235-.096.234-.226l.092-2.742-.092-2.683c.001-.13-.104-.226-.234-.226m1.91 10.082c.144 0 .261-.117.261-.261V8.456c0-.144-.117-.26-.26-.26-.144 0-.261.116-.261.26v9.127c0 .144.117.261.26.261M24 10.5c0-2.485-2.016-4.5-4.5-4.5-1.086 0-2.084.387-2.857 1.027-.19-3.332-2.943-5.984-6.33-5.984-1.737 0-3.312.673-4.49 1.772-.443.407-.561.838-.565 1.226v13.682c.004.406.325.735.73.764H19.5C21.985 18.487 24 16.472 24 14s0 0 0 0z" />
+                            </svg>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">SoundCloud</span>
+                            <span class="social-handle">@valencinn</span>
+                        </div>
+                        <span class="social-arrow">↗</span>
+                    </a>
+
+                    <!-- Email directo -->
+                    <!--
+            ┌─────────────────────────────────────────────────┐
+            │  REEMPLAZÁ "tu@email.com" con tu mail real.     │
+            │  También en el href mailto:                      │
+            └─────────────────────────────────────────────────┘
+          -->
+                    <a class="social-link" href="mailto:valencinn@example.com">
+                        <div class="social-icon" style="background:rgba(184,255,132,0.1);">
+                            <span style="font-size:1.1rem;">✉️</span>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">Email</span>
+                            <!-- Reemplazá con tu mail: -->
+                            <span class="social-handle">valencinn@example.com</span>
+                        </div>
+                        <span class="social-arrow">↗</span>
+                    </a>
+
+                </nav>
+
+                <!-- Disponibilidad -->
+                <div style="margin-top:24px;padding:16px;border:1px solid rgba(184,255,132,0.15);border-radius:var(--r-md);background:rgba(184,255,132,0.05);"
+                    data-reveal data-delay="2">
+                    <div class="status-dot" style="margin-bottom:8px;">Disponible ahora</div>
+                    <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.6;margin-top:6px;">
+                        Abierto a proyectos freelance, colaboraciones creativas y trabajo part-time remoto.
+                        Zona horaria: <strong style="color:var(--text);">GMT-3 (Buenos Aires)</strong>
+                    </p>
+                </div>
+            </aside>
+
+        </div>
+
+        <!-- ── Footer ── -->
+        <footer class="site-footer">
+            <span class="footer-brand">Valentin · Creative Portfolio</span>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="index.html">Home</a>
+                <a href="coding.html">Coding</a>
+                <a href="design.html">Design</a>
+                <a href="sound.html">Sound</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="footer-note">Built with care · <span data-year></span></p>
+        </footer>
+
+    </div>
+
+    <script>
+        /* Form handling */
+        const form = document.getElementById("contact-form");
+        const successEl = document.getElementById("form-success");
+        const submitBtn = document.getElementById("submit-btn");
+
+        if (form) {
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                submitBtn.classList.add("sending");
+                submitBtn.querySelector("span").textContent = "Enviando...";
+
+                try {
+                    const res = await fetch(form.action, {
+                        method: "POST",
+                        body: new FormData(form),
+                        headers: { Accept: "application/json" },
+                    });
+
+                    if (res.ok) {
+                        form.style.display = "none";
+                        successEl.classList.add("visible");
+                    } else {
+                        /* Si falla Formspree, abrir mailto como fallback */
+                        const data = new FormData(form);
+                        const body = encodeURIComponent(data.get("message"));
+                        const subject = encodeURIComponent("Propuesta: " + (data.get("subject") || "Portfolio"));
+                        window.location.href = `mailto:valencinn@example.com?subject=${subject}&body=${body}`;
+                    }
+                } catch {
+                    /* Fallback offline */
+                    const data = new FormData(form);
+                    const body = encodeURIComponent(data.get("message"));
+                    const subject = encodeURIComponent("Propuesta: " + (data.get("subject") || "Portfolio"));
+                    window.location.href = `mailto:valencinn@example.com?subject=${subject}&body=${body}`;
+                } finally {
+                    submitBtn.classList.remove("sending");
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

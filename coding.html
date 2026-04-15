@@ -13,6 +13,33 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles.css">
     <script defer src="main.js"></script>
+
+    <style>
+        /* ── Project image area ── */
+        .proj-img {
+            position: absolute;
+            inset: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            opacity: 0.82;
+            transition: opacity 0.3s ease, transform 0.4s ease;
+        }
+
+        .work-card:hover .proj-img {
+            opacity: 1;
+            transform: scale(1.03);
+        }
+
+        /* Fallback gradient shown when no image is set */
+        .proj-fallback {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+        }
+    </style>
 </head>
 
 <body>
@@ -32,6 +59,7 @@
                 <a class="nav-link" href="coding.html">Coding</a>
                 <a class="nav-link" href="design.html">Design</a>
                 <a class="nav-link" href="sound.html">Sound</a>
+                <a class="nav-link" href="contact.html">Contact</a>
             </nav>
         </header>
 
@@ -46,182 +74,367 @@
                 <h1 data-reveal>Projects &amp;<br><em style="font-style:normal;color:var(--lime);">builds.</em></h1>
                 <p data-reveal data-delay="1"
                     style="font-size:1.05rem;color:var(--text-muted);max-width:52ch;line-height:1.7;margin-top:16px;">
-                    Front-end experiments, full-stack projects, open-source tools, and production-grade interfaces.
+                    Front-end experiments, AI projects, game mods, and real tools.
                     Each project is a chance to build something better than the last.
                 </p>
                 <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;" data-reveal data-delay="2">
-                    <a class="btn btn-primary" href="https://github.com/Valencinn" target="_blank" rel="noopener">View on GitHub
-                        ↗</a>
+                    <a class="btn btn-primary" href="https://github.com/Valencinn" target="_blank" rel="noopener">View
+                        on GitHub ↗</a>
                     <div class="status-dot" style="align-self:center;">Open to collaboration</div>
                 </div>
             </div>
         </section>
 
-        <!-- ── Pinned projects ── -->
+        <!-- ════════════════════════════════════════════════════════
+         PINNED / FEATURED PROJECTS
+         ════════════════════════════════════════════════════════ -->
         <section class="section glass" aria-label="Pinned projects">
             <div class="section-header">
                 <div data-reveal>
                     <p class="section-label">Pinned</p>
                     <h2 class="section-title">Featured projects.</h2>
                 </div>
-                <a class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener" data-reveal="right">
+                <a class="btn btn-ghost" href="https://github.com/Valencinn" target="_blank" rel="noopener"
+                    data-reveal="right">
                     All repos ↗
                 </a>
             </div>
 
             <div class="work-grid featured">
-                <!-- Large card -->
+
+                <!-- ══════════════════════════════════════
+             PROJECT 1: checkers.ai  (LARGE CARD)
+             ══════════════════════════════════════ -->
                 <div class="work-card" data-reveal>
                     <div class="work-media work-media-tall">
-                        <div class="work-media-inner media-green media-grid-bg">
+
+                        <!--
+              ┌─────────────────────────────────────────────────┐
+              │  IMAGEN PRINCIPAL — checkers.ai                  │
+              │                                                   │
+              │  Reemplazá el src con la ruta a tu screenshot.   │
+              │  Ejemplo: src="./assets/img/checkers-ai.png"     │
+              │                                                   │
+              │  Las imágenes van en la carpeta assets/img/      │
+              │  junto a styles.css.                             │
+              └─────────────────────────────────────────────────┘
+            -->
+                        <!-- 
+                        <img class="proj-img" src="./assets/images/chekr.jpg"
+                            alt="Screenshot de checkers.ai — tablero de damas con IA" loading="lazy" /> -->
+
+
+                        <!-- OPCION B — Placeholder hasta que pongas la imagen (borrar cuando uses Opción A): -->
+                        <div class="proj-fallback media-green media-grid-bg">
                             <div style="display:grid;gap:14px;width:100%;max-width:300px;">
-                                <div class="win-dots"><span class="win-dot"></span><span class="win-dot"></span><span
-                                        class="win-dot"></span></div>
+                                <div class="win-dots">
+                                    <span class="win-dot"></span><span class="win-dot"></span><span
+                                        class="win-dot"></span>
+                                </div>
+                                <div style="text-align:center;padding-top:8px;">
+                                    <p
+                                        style="font-family:var(--font-display);font-size:2.2rem;color:var(--lime);letter-spacing:-0.03em;">
+                                        ♟ AI</p>
+                                    <p
+                                        style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);margin-top:8px;">
+                                        checkers.ai</p>
+                                </div>
                                 <div class="code-lines">
                                     <span class="code-line accent l-long"></span>
                                     <span class="code-line l-med"></span>
                                     <span class="code-line l-short"></span>
                                     <span class="code-line accent l-long"></span>
                                     <span class="code-line l-med"></span>
-                                    <span class="code-line l-long"></span>
-                                    <span class="code-line l-short"></span>
-                                    <span class="code-line l-med"></span>
                                 </div>
                             </div>
                         </div>
+
                         <span class="work-badge">⭐ Flagship</span>
                     </div>
                     <div class="work-body">
-                        <p class="work-tag">Full-stack · TypeScript</p>
-                        <h3>Project Alpha — A production-ready dashboard</h3>
-                        <p>A complete admin dashboard built with TypeScript and a Node backend. Features real-time
-                            updates, role-based auth, and a design system built from scratch.</p>
+                        <p class="work-tag">AI · Game · Python</p>
+                        <h3>checkers.ai — Damas con inteligencia artificial</h3>
+                        <p>
+                            Juego de damas completo con IA implementada usando el algoritmo Minimax y poda alfa-beta.
+                            El agente evalúa posiciones del tablero y toma decisiones óptimas en tiempo real.
+                        </p>
                         <div class="work-meta">
-                            <span class="pill">TypeScript</span>
-                            <span class="pill">Node.js</span>
-                            <span class="pill">PostgreSQL</span>
-                            <span class="pill">CSS Modules</span>
+                            <span class="pill">Python</span>
+                            <span class="pill">Minimax</span>
+                            <span class="pill">Alpha-Beta</span>
+                            <span class="pill">Game AI</span>
                         </div>
+                        <a href="https://github.com/Valencinn/checkers.ai" target="_blank" rel="noopener"
+                            style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.82rem;color:var(--lime);">
+                            Ver en GitHub ↗
+                        </a>
                     </div>
                 </div>
 
-                <!-- Stack of two -->
+                <!-- Stack de dos cards a la derecha -->
                 <div style="display:grid;gap:14px;">
+
+                    <!-- ══════════════════════════════════════
+               PROJECT 2: ufc-api
+               ══════════════════════════════════════ -->
                     <div class="work-card" data-reveal data-delay="1">
                         <div class="work-media">
-                            <div class="work-media-inner media-blue media-grid-bg">
-                                <div class="waveform" style="height:60px;" aria-hidden="true">
-                                    <span></span><span></span><span></span><span></span><span></span>
-                                    <span></span><span></span><span></span>
+
+                            <!--
+                ┌─────────────────────────────────────────────────┐
+                │  IMAGEN — ufc-api                                │
+                │  src="./assets/img/ufc-api.png"                 │
+                └─────────────────────────────────────────────────┘
+              -->
+                            <!-- OPCION A — con imagen (descomentar):
+              <img class="proj-img" src="./assets/img/ufc-api.png" alt="ufc-api screenshot" loading="lazy" />
+              -->
+
+                            <!-- OPCION B — Placeholder: -->
+                            <div class="proj-fallback media-blue media-grid-bg">
+                                <div style="text-align:center;">
+                                    <p
+                                        style="font-family:var(--font-display);font-size:1.6rem;color:var(--sky);letter-spacing:-0.02em;">
+                                        UFC API</p>
+                                    <p
+                                        style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);margin-top:6px;">
+                                        REST · Node.js</p>
                                 </div>
                             </div>
-                            <span class="work-badge">Open source</span>
+
+                            <span class="work-badge">API</span>
                         </div>
                         <div class="work-body">
-                            <p class="work-tag">Library · JavaScript</p>
-                            <h3>Wave.js — Audio visualizer library</h3>
-                            <p>A lightweight canvas-based audio visualizer. Plug in any audio source and get animated
-                                waveforms instantly.</p>
+                            <p class="work-tag">Back-end · Node.js</p>
+                            <h3>ufc-api — UFC data REST API</h3>
+                            <p>API que expone datos de peleadores, eventos y estadísticas de la UFC. Scraping y parsing
+                                de perfiles en tiempo real.</p>
                             <div class="work-meta">
-                                <span class="pill">Vanilla JS</span>
-                                <span class="pill">Canvas API</span>
-                                <span class="pill">Web Audio</span>
+                                <span class="pill">Node.js</span>
+                                <span class="pill">REST API</span>
+                                <span class="pill">Web Scraping</span>
                             </div>
+                            <a href="https://github.com/Valencinn/ufc-api" target="_blank" rel="noopener"
+                                style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.8rem;color:var(--lime);">
+                                Ver en GitHub ↗
+                            </a>
                         </div>
                     </div>
 
+                    <!-- ══════════════════════════════════════
+               PROJECT 3: Portfolio (este sitio)
+               ══════════════════════════════════════ -->
                     <div class="work-card" data-reveal data-delay="2">
                         <div class="work-media">
-                            <div class="work-media-inner media-purple media-grid-bg">
+
+                            <!--
+                ┌─────────────────────────────────────────────────┐
+                │  IMAGEN — portfolio                              │
+                │  src="./assets/img/portfolio.png"               │
+                └─────────────────────────────────────────────────┘
+              -->
+                            <!-- OPCION A — con imagen (descomentar):
+              <img class="proj-img" src="./assets/img/portfolio.png" alt="Portfolio screenshot" loading="lazy" />
+              -->
+
+                            <!-- OPCION B — Placeholder: -->
+                            <div class="proj-fallback media-purple media-grid-bg">
                                 <div style="text-align:center;">
                                     <p
-                                        style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-muted);margin-bottom:8px;">
-                                        npm install @val/cli</p>
+                                        style="font-family:var(--font-display);font-size:1.4rem;color:rgba(180,150,255,0.9);">
+                                        Portfolio</p>
                                     <p
-                                        style="font-family:var(--font-display);font-size:1.2rem;color:rgba(180,150,255,0.9);">
-                                        CLI Tools</p>
+                                        style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);margin-top:6px;">
+                                        HTML · CSS · JS</p>
                                 </div>
                             </div>
-                            <span class="work-badge">CLI</span>
+
+                            <span class="work-badge">Este sitio</span>
                         </div>
                         <div class="work-body">
-                            <p class="work-tag">Tooling · Node.js</p>
-                            <h3>Val CLI — Developer scaffolding tool</h3>
-                            <p>A command-line tool for spinning up front-end projects with opinionated defaults and
-                                smart defaults.</p>
+                            <p class="work-tag">Front-end · CSS</p>
+                            <h3>Portfolio — Este mismo sitio</h3>
+                            <p>Portfolio personal construido con HTML, CSS y JavaScript puro. Glassmorphism, animaciones
+                                scroll-reveal y diseño modular.</p>
                             <div class="work-meta">
-                                <span class="pill">Node.js</span>
-                                <span class="pill">Commander</span>
-                                <span class="pill">Inquirer</span>
+                                <span class="pill">HTML</span>
+                                <span class="pill">CSS</span>
+                                <span class="pill">Vanilla JS</span>
                             </div>
+                            <a href="https://github.com/Valencinn/portfolio" target="_blank" rel="noopener"
+                                style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.8rem;color:var(--lime);">
+                                Ver en GitHub ↗
+                            </a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- ── More projects ── -->
+        <!-- ════════════════════════════════════════════════════════
+         MORE PROJECTS — GMOD MODS + OTROS
+         ════════════════════════════════════════════════════════ -->
         <section class="section glass" aria-label="More projects">
             <div class="section-header" data-reveal>
                 <div>
-                    <p class="section-label">More work</p>
+                    <p class="section-label">Más trabajo</p>
                     <h2 class="section-title">Other projects.</h2>
                 </div>
             </div>
+
             <div class="work-grid">
+
+                <!-- ══════════════════════════════════════
+             PROJECT 4: GMOD Mods
+             ══════════════════════════════════════ -->
                 <div class="work-card" data-reveal>
                     <div class="work-media">
-                        <div class="work-media-inner media-amber media-grid-bg">
-                            <p
-                                style="font-family:var(--font-display);font-size:1.4rem;color:var(--amber);text-align:center;">
-                                API</p>
+
+                        <!--
+              ┌─────────────────────────────────────────────────┐
+              │  IMAGEN — GMOD mods                              │
+              │  src="./assets/img/gmod-mods.png"               │
+              │                                                   │
+              │  TIP: podés usar un screenshot del juego         │
+              │  con el mod activo, o del Garry's Mod workshop.  │
+              └─────────────────────────────────────────────────┘
+            -->
+                        <!-- OPCION A — con imagen (descomentar):
+            <img class="proj-img" src="./assets/img/gmod-mods.png" alt="Garry's Mod mods screenshot" loading="lazy" />
+            -->
+
+                        <!-- OPCION B — Placeholder: -->
+                        <div class="proj-fallback media-amber media-grid-bg">
+                            <div style="text-align:center;">
+                                <p style="font-size:2rem;line-height:1;margin-bottom:6px;">🎮</p>
+                                <p style="font-family:var(--font-display);font-size:1.3rem;color:var(--amber);">GMod
+                                    Mods</p>
+                                <p
+                                    style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);margin-top:4px;">
+                                    Lua · Garry's Mod</p>
+                            </div>
                         </div>
+
+                        <span class="work-badge">Game modding</span>
                     </div>
                     <div class="work-body">
-                        <p class="work-tag">Back-end · Python</p>
-                        <h3>REST API boilerplate</h3>
-                        <p>A FastAPI boilerplate with JWT auth, CORS, rate limiting, and PostgreSQL ORM included out of
-                            the box.</p>
-                        <div class="work-meta"><span class="pill">Python</span><span class="pill">FastAPI</span><span
-                                class="pill">SQLAlchemy</span></div>
+                        <p class="work-tag">Game · Lua</p>
+                        <h3>Mods de Garry's Mod</h3>
+                        <p>
+                            Addons personalizados para Garry's Mod escritos en Lua. Mecánicas nuevas, sistemas de
+                            entidades y herramientas para el sandbox.
+                        </p>
+                        <div class="work-meta">
+                            <span class="pill">Lua</span>
+                            <span class="pill">Garry's Mod</span>
+                            <span class="pill">GLua API</span>
+                        </div>
+                        <!--
+              Actualizá este href con el link exacto al repo de GMOD en tu GitHub.
+              Por ejemplo: href="https://github.com/Valencinn/gmod-mods"
+            -->
+                        <a href="https://github.com/Valencinn" target="_blank" rel="noopener"
+                            style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.8rem;color:var(--lime);">
+                            Ver en GitHub ↗
+                        </a>
                     </div>
                 </div>
 
+                <!-- ══════════════════════════════════════
+             PROJECT 5: Slot libre — tu repo extra
+             ══════════════════════════════════════ -->
                 <div class="work-card" data-reveal data-delay="1">
                     <div class="work-media">
-                        <div class="work-media-inner media-rose media-grid-bg">
-                            <p
-                                style="font-family:var(--font-display);font-size:1.4rem;color:var(--rose);text-align:center;">
-                                UI Kit</p>
+
+                        <!--
+              ┌─────────────────────────────────────────────────┐
+              │  IMAGEN — repo extra                             │
+              │  src="./assets/img/nombre-repo.png"             │
+              │                                                   │
+              │  Cambiá también el título, descripción y pills   │
+              │  abajo con los datos de tu repo.                 │
+              └─────────────────────────────────────────────────┘
+            -->
+                        <!-- OPCION A — con imagen (descomentar):
+            <img class="proj-img" src="./assets/img/nombre-repo.png" alt="Descripción del proyecto" loading="lazy" />
+            -->
+
+                        <!-- OPCION B — Placeholder: -->
+                        <div class="proj-fallback media-rose media-grid-bg">
+                            <div style="text-align:center;">
+                                <p style="font-family:var(--font-display);font-size:1.4rem;color:var(--rose);">Tu
+                                    proyecto</p>
+                                <p
+                                    style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);margin-top:6px;">
+                                    Lenguaje · Stack</p>
+                            </div>
                         </div>
+
+                        <span class="work-badge">→ Completar</span>
                     </div>
                     <div class="work-body">
-                        <p class="work-tag">Front-end · CSS</p>
-                        <h3>Glass UI component kit</h3>
-                        <p>A CSS-only glassmorphism component library with dark mode, custom properties, and zero
-                            dependencies.</p>
-                        <div class="work-meta"><span class="pill">HTML</span><span class="pill">CSS</span><span
-                                class="pill">Vanilla JS</span></div>
+                        <!-- Reemplazá todo este bloque con los datos reales de tu repo -->
+                        <p class="work-tag">Categoría · Lenguaje</p>
+                        <h3>Nombre del repo</h3>
+                        <p>Descripción breve del proyecto — qué hace, por qué lo construiste, qué problema resuelve.</p>
+                        <div class="work-meta">
+                            <span class="pill">Tag 1</span>
+                            <span class="pill">Tag 2</span>
+                            <span class="pill">Tag 3</span>
+                        </div>
+                        <a href="https://github.com/Valencinn/TU-REPO" target="_blank" rel="noopener"
+                            style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.8rem;color:var(--lime);">
+                            Ver en GitHub ↗
+                        </a>
                     </div>
                 </div>
 
+                <!-- ══════════════════════════════════════
+             PROJECT 6: Slot libre — repo adicional
+             ══════════════════════════════════════ -->
                 <div class="work-card" data-reveal data-delay="2">
                     <div class="work-media">
-                        <div class="work-media-inner media-green media-grid-bg">
-                            <p
-                                style="font-family:var(--font-display);font-size:1.4rem;color:var(--lime);text-align:center;">
-                                3D</p>
+
+                        <!--
+              ┌─────────────────────────────────────────────────┐
+              │  IMAGEN — repo adicional                         │
+              │  src="./assets/img/nombre-repo-2.png"           │
+              └─────────────────────────────────────────────────┘
+            -->
+                        <!-- OPCION A — con imagen (descomentar):
+            <img class="proj-img" src="./assets/img/nombre-repo-2.png" alt="Descripción del proyecto" loading="lazy" />
+            -->
+
+                        <!-- OPCION B — Placeholder: -->
+                        <div class="proj-fallback media-green media-grid-bg">
+                            <div style="text-align:center;">
+                                <p style="font-family:var(--font-display);font-size:1.4rem;color:var(--lime);">Tu
+                                    proyecto</p>
+                                <p
+                                    style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);margin-top:6px;">
+                                    Lenguaje · Stack</p>
+                            </div>
                         </div>
+
+                        <span class="work-badge">→ Completar</span>
                     </div>
                     <div class="work-body">
-                        <p class="work-tag">WebGL · Three.js</p>
-                        <h3>Generative 3D backgrounds</h3>
-                        <p>A collection of atmospheric 3D scenes built with Three.js — mesh gradients, particle fields,
-                            and fluid simulations.</p>
-                        <div class="work-meta"><span class="pill">Three.js</span><span class="pill">GLSL</span><span
-                                class="pill">WebGL</span></div>
+                        <p class="work-tag">Categoría · Lenguaje</p>
+                        <h3>Nombre del repo</h3>
+                        <p>Descripción breve del proyecto — qué hace, por qué lo construiste, qué problema resuelve.</p>
+                        <div class="work-meta">
+                            <span class="pill">Tag 1</span>
+                            <span class="pill">Tag 2</span>
+                            <span class="pill">Tag 3</span>
+                        </div>
+                        <a href="https://github.com/Valencinn/TU-REPO" target="_blank" rel="noopener"
+                            style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.8rem;color:var(--lime);">
+                            Ver en GitHub ↗
+                        </a>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -235,17 +448,17 @@
                 <div class="mini-card" data-reveal>
                     <span class="mini-icon">🌐</span>
                     <h4>Front-end</h4>
-                    <p>HTML, CSS, JavaScript, TypeScript, React, and vanilla everything-first.</p>
+                    <p>HTML, CSS, JavaScript, TypeScript, React, y vanilla-first cuando es posible.</p>
                 </div>
                 <div class="mini-card" data-reveal data-delay="1">
                     <span class="mini-icon">⚙️</span>
-                    <h4>Back-end</h4>
-                    <p>Node.js, Python (FastAPI / Flask), REST APIs, PostgreSQL, and SQLite.</p>
+                    <h4>Back-end &amp; AI</h4>
+                    <p>Node.js, Python, REST APIs, algoritmos de IA (Minimax, Alpha-Beta), y web scraping.</p>
                 </div>
                 <div class="mini-card" data-reveal data-delay="2">
-                    <span class="mini-icon">🛠</span>
-                    <h4>Tooling</h4>
-                    <p>Git, Vite, esbuild, Vercel, Docker basics, and Linux CLI every day.</p>
+                    <span class="mini-icon">🎮</span>
+                    <h4>Game &amp; Tooling</h4>
+                    <p>Lua (Garry's Mod), Git, Vite, Vercel, y Linux CLI todos los días.</p>
                 </div>
             </div>
         </section>
@@ -258,6 +471,7 @@
                 <a href="coding.html">Coding</a>
                 <a href="design.html">Design</a>
                 <a href="sound.html">Sound</a>
+                <a href="contact.html">Contact</a>
             </nav>
             <p class="footer-note">Built with care · <span data-year></span></p>
         </footer>
