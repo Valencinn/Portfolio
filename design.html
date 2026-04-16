@@ -17,7 +17,7 @@
     <style>
         /* ════════════════════════════════════════
        DESIGN PAGE — Extended styles
-       Complementa styles.css sin sobreescribirlo
+       Complements styles.css without overwriting it
        ════════════════════════════════════════ */
 
         /* ── Category tabs ── */
@@ -175,25 +175,25 @@
 
         /*
       ════════════════════════════════════════════════════
-      CÓMO AGREGAR IMÁGENES REALES
+      HOW TO ADD REAL IMAGES
       ════════════════════════════════════════════════════
-      Cada card tiene un <div class="design-card-img">.
-      Dentro hay un placeholder .img-placeholder.
-      Para reemplazarlo con una imagen real:
+      Each card has a <div class="design-card-img">.
+      Inside there is a .img-placeholder placeholder.
+      To replace it with a real image:
 
-      1. Guardá tu imagen en: ./assets/images/design/
-         Ejemplo: ./assets/images/design/foto-urbana.jpg
+      1. Save your image in: ./assets/images/design/
+         Example: ./assets/images/design/urban-photo.jpg
 
-      2. Reemplazá el .img-placeholder con:
+      2. Replace the .img-placeholder with:
          <img
-           src="./assets/images/design/TU-ARCHIVO.jpg"
-           alt="Descripción de tu imagen"
+           src="./assets/images/design/YOUR-FILE.jpg"
+           alt="Description of your image"
            loading="lazy"
            class="design-card-real-img"
          />
 
-      3. El CSS .design-card-real-img ya está definido abajo
-         para que se vea correctamente (object-fit: cover).
+      3. The .design-card-real-img CSS is already defined below
+         so it displays correctly (object-fit: cover).
       ════════════════════════════════════════════════════
     */
 
@@ -212,7 +212,7 @@
             opacity: 1;
         }
 
-        /* Placeholder (mientras no tenés imagen) */
+        /* Placeholder (while you do not have an image yet) */
         .img-placeholder {
             position: absolute;
             inset: 0;
@@ -442,13 +442,13 @@
                 </div>
                 <!--
           ┌─────────────────────────────────────────────────┐
-          │  Reemplazá este link con tu perfil real         │
-          │  de Behance cuando lo tengas.                   │
+          │  Replace this link with your real Behance       │
+          │  profile when you have it.                      │
           └─────────────────────────────────────────────────┘
         -->
-                <a class="btn btn-ghost" href="https://www.behance.net/TU-USUARIO" target="_blank" rel="noopener"
+                <a class="btn btn-ghost" href="https://www.behance.net/YOUR-USER" target="_blank" rel="noopener"
                     data-reveal="right">
-                    <!-- ↑ REEMPLAZÁ TU-USUARIO con tu handle de Behance -->
+                    <!-- ↑ REPLACE YOUR-USER with your Behance handle -->
                     Behance ↗
                 </a>
             </div>
@@ -473,7 +473,7 @@
                 <div class="cat-section-header" data-reveal>
                     <div class="cat-section-icon photo">📷</div>
                     <div class="cat-section-info">
-                        <span class="cat-section-label">Categoría 01</span>
+                        <span class="cat-section-label">Category 01</span>
                         <h3 class="cat-section-title color-sky">Photography</h3>
                     </div>
                     <span class="cat-section-count">3 works</span>
@@ -489,53 +489,53 @@
               #080e14;">
                             <!--
                 ════════════════════════════════════
-                FOTOGRAFÍA 1 — REEMPLAZAR IMAGEN
+                PHOTOGRAPHY 1 — REPLACE IMAGE
                 ════════════════════════════════════
-                Opción A (con imagen real):
-                Reemplazá el bloque .img-placeholder con:
+                Option A (with a real image):
+                Replace the .img-placeholder block with:
 
                 <img
                   class="design-card-real-img"
-                  src="./assets/images/design/foto-01.jpg"
-                  alt="Descripción de la foto"
+                  src="./assets/images/design/photo-01.jpg"
+                  alt="Photo description"
                   loading="lazy"
                 />
 
-                Opción B (placeholder activo — borrar cuando uses A):
+                Option B (active placeholder — delete when you use A):
               -->
                             <div class="img-placeholder" style="background:
                 radial-gradient(circle at 30% 40%, rgba(144,200,240,0.25), transparent 50%),
                 #080e14;">
                                 <div class="img-placeholder-inner">
                                     <span class="img-placeholder-icon">🌆</span>
-                                    <span class="img-placeholder-text">foto-01.jpg</span>
+                                    <span class="img-placeholder-text">photo-01.jpg</span>
                                 </div>
                             </div>
                             <span class="design-card-badge badge-photo">Photo</span>
                         </div>
                         <div class="design-card-body">
                             <span class="design-card-category" style="color:var(--sky);">Urban · Street</span>
-                            <!-- ↓ REEMPLAZÁ con el título real de tu obra -->
-                            <h4 class="design-card-title">Luz urbana — Serie I</h4>
-                            <!-- ↓ REEMPLAZÁ con tu descripción -->
+                            <!-- ↓ REPLACE with the real title of your work -->
+                            <h4 class="design-card-title">Urban Light — Series I</h4>
+                            <!-- ↓ REPLACE with your description -->
                             <p class="design-card-desc">
-                                Serie fotográfica urbana capturando contrastes de luz y sombra en la ciudad de Buenos
+                                Urban photography series capturing contrasts of light and shadow in the city of Buenos
                                 Aires.
                             </p>
                         </div>
                         <div class="design-card-footer">
                             <span class="design-card-meta">2024</span>
                             <!--
-                ↓ REEMPLAZÁ href="#" con el link directo
-                  al proyecto en tu Behance.
-                  Ejemplo: href="https://www.behance.net/gallery/12345/Titulo"
+                ↓ REPLACE href="#" with the direct link
+                  to the project on your Behance.
+                  Example: href="https://www.behance.net/gallery/12345/Title"
               -->
                             <a class="btn-behance" href="#" target="_blank" rel="noopener">
                                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path
                                         d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.595.836 2.208 2.101 2.208.768 0 1.374-.306 1.695-.872l2.959.893zm-5.68-3.7c-.06-1.095-.57-1.842-1.69-1.842-1.023 0-1.68.663-1.773 1.842H18.046zM9.764 7.495c1.358.053 2.437.355 3.729-.604.465-.34.922-1.078.922-1.838C14.415 3.299 12.986 3 12.014 3H3v18h9.455c1.068 0 2.152-.243 2.889-.688 1.092-.67 1.59-1.744 1.59-2.976 0-2.058-1.213-3.066-2.916-3.297-1.195-.16-1.78-.305-2.334-.564l.08.02zM7.006 5.63H11.48c1.19 0 1.919.532 1.919 1.507 0 1.077-.729 1.664-1.919 1.664H7.006V5.63zm0 9.274H11.9c1.362 0 2.139.617 2.139 1.747 0 1.145-.777 1.748-2.139 1.748H7.006v-3.495z" />
                                 </svg>
-                                Ver en Behance
+                                View on Behance
                             </a>
                         </div>
                     </article>
@@ -545,8 +545,8 @@
                         <div class="design-card-img">
                             <!--
                 ════════════════════════════════════
-                FOTOGRAFÍA 2 — REEMPLAZAR IMAGEN
-                src="./assets/images/design/foto-02.jpg"
+                PHOTOGRAPHY 2 — REPLACE IMAGE
+                src="./assets/images/design/photo-02.jpg"
                 ════════════════════════════════════
               -->
                             <div class="img-placeholder" style="background:
@@ -555,30 +555,30 @@
                 #0a120a;">
                                 <div class="img-placeholder-inner">
                                     <span class="img-placeholder-icon">🌿</span>
-                                    <span class="img-placeholder-text">foto-02.jpg</span>
+                                    <span class="img-placeholder-text">photo-02.jpg</span>
                                 </div>
                             </div>
                             <span class="design-card-badge badge-photo">Photo</span>
                         </div>
                         <div class="design-card-body">
                             <span class="design-card-category" style="color:var(--sky);">Nature · Landscape</span>
-                            <!-- ↓ REEMPLAZÁ con el título real -->
-                            <h4 class="design-card-title">Naturaleza silenciosa</h4>
-                            <!-- ↓ REEMPLAZÁ con tu descripción -->
+                            <!-- ↓ REPLACE with the real title -->
+                            <h4 class="design-card-title">Silent Nature</h4>
+                            <!-- ↓ REPLACE with your description -->
                             <p class="design-card-desc">
-                                Paisajes naturales fotografiados en quietud. Composiciones minimalistas con foco en
-                                textura y luz.
+                                Natural landscapes photographed in stillness. Minimal compositions focused on
+                                texture and light.
                             </p>
                         </div>
                         <div class="design-card-footer">
                             <span class="design-card-meta">2024</span>
-                            <!-- ↓ REEMPLAZÁ href="#" con tu link de Behance -->
+                            <!-- ↓ REPLACE href="#" with your Behance link -->
                             <a class="btn-behance" href="#" target="_blank" rel="noopener">
                                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path
                                         d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.595.836 2.208 2.101 2.208.768 0 1.374-.306 1.695-.872l2.959.893zm-5.68-3.7c-.06-1.095-.57-1.842-1.69-1.842-1.023 0-1.68.663-1.773 1.842H18.046zM9.764 7.495c1.358.053 2.437.355 3.729-.604.465-.34.922-1.078.922-1.838C14.415 3.299 12.986 3 12.014 3H3v18h9.455c1.068 0 2.152-.243 2.889-.688 1.092-.67 1.59-1.744 1.59-2.976 0-2.058-1.213-3.066-2.916-3.297-1.195-.16-1.78-.305-2.334-.564l.08.02zM7.006 5.63H11.48c1.19 0 1.919.532 1.919 1.507 0 1.077-.729 1.664-1.919 1.664H7.006V5.63zm0 9.274H11.9c1.362 0 2.139.617 2.139 1.747 0 1.145-.777 1.748-2.139 1.748H7.006v-3.495z" />
                                 </svg>
-                                Ver en Behance
+                                View on Behance
                             </a>
                         </div>
                     </article>
@@ -588,8 +588,8 @@
                         <div class="design-card-img">
                             <!--
                 ════════════════════════════════════
-                FOTOGRAFÍA 3 — REEMPLAZAR IMAGEN
-                src="./assets/images/design/foto-03.jpg"
+                PHOTOGRAPHY 3 — REPLACE IMAGE
+                src="./assets/images/design/photo-03.jpg"
                 ════════════════════════════════════
               -->
                             <div class="img-placeholder" style="background:
@@ -598,30 +598,30 @@
                 #12100a;">
                                 <div class="img-placeholder-inner">
                                     <span class="img-placeholder-icon">🏛</span>
-                                    <span class="img-placeholder-text">foto-03.jpg</span>
+                                    <span class="img-placeholder-text">photo-03.jpg</span>
                                 </div>
                             </div>
                             <span class="design-card-badge badge-photo">Photo</span>
                         </div>
                         <div class="design-card-body">
                             <span class="design-card-category" style="color:var(--sky);">Architecture · Detail</span>
-                            <!-- ↓ REEMPLAZÁ con el título real -->
-                            <h4 class="design-card-title">Geometría construida</h4>
-                            <!-- ↓ REEMPLAZÁ con tu descripción -->
+                            <!-- ↓ REPLACE with the real title -->
+                            <h4 class="design-card-title">Constructed Geometry</h4>
+                            <!-- ↓ REPLACE with your description -->
                             <p class="design-card-desc">
-                                Arquitectura como abstracción. Patrones, ángulos y repeticiones en estructuras
-                                cotidianas.
+                                Architecture as abstraction. Patterns, angles, and repetitions in
+                                everyday structures.
                             </p>
                         </div>
                         <div class="design-card-footer">
                             <span class="design-card-meta">2023</span>
-                            <!-- ↓ REEMPLAZÁ href="#" con tu link de Behance -->
+                            <!-- ↓ REPLACE href="#" with your Behance link -->
                             <a class="btn-behance" href="#" target="_blank" rel="noopener">
                                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path
                                         d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.595.836 2.208 2.101 2.208.768 0 1.374-.306 1.695-.872l2.959.893zm-5.68-3.7c-.06-1.095-.57-1.842-1.69-1.842-1.023 0-1.68.663-1.773 1.842H18.046zM9.764 7.495c1.358.053 2.437.355 3.729-.604.465-.34.922-1.078.922-1.838C14.415 3.299 12.986 3 12.014 3H3v18h9.455c1.068 0 2.152-.243 2.889-.688 1.092-.67 1.59-1.744 1.59-2.976 0-2.058-1.213-3.066-2.916-3.297-1.195-.16-1.78-.305-2.334-.564l.08.02zM7.006 5.63H11.48c1.19 0 1.919.532 1.919 1.507 0 1.077-.729 1.664-1.919 1.664H7.006V5.63zm0 9.274H11.9c1.362 0 2.139.617 2.139 1.747 0 1.145-.777 1.748-2.139 1.748H7.006v-3.495z" />
                                 </svg>
-                                Ver en Behance
+                                View on Behance
                             </a>
                         </div>
                     </article>
@@ -636,7 +636,7 @@
                 <div class="cat-section-header" data-reveal>
                     <div class="cat-section-icon draw">✏️</div>
                     <div class="cat-section-info">
-                        <span class="cat-section-label">Categoría 02</span>
+                        <span class="cat-section-label">Category 02</span>
                         <h3 class="cat-section-title color-rose">Drawings</h3>
                     </div>
                     <span class="cat-section-count">3 works</span>
@@ -649,8 +649,8 @@
                         <div class="design-card-img">
                             <!--
                 ════════════════════════════════════
-                DIBUJO 1 — REEMPLAZAR IMAGEN
-                src="./assets/images/design/dibujo-01.jpg"
+                DRAWING 1 — REPLACE IMAGE
+                src="./assets/images/design/drawing-01.jpg"
                 ════════════════════════════════════
               -->
                             <div class="img-placeholder" style="background:
@@ -659,29 +659,29 @@
                 #140a0e;">
                                 <div class="img-placeholder-inner">
                                     <span class="img-placeholder-icon">🖊</span>
-                                    <span class="img-placeholder-text">dibujo-01.jpg</span>
+                                    <span class="img-placeholder-text">drawing-01.jpg</span>
                                 </div>
                             </div>
                             <span class="design-card-badge badge-draw">Illustration</span>
                         </div>
                         <div class="design-card-body">
                             <span class="design-card-category" style="color:var(--rose);">Illustration · Digital</span>
-                            <!-- ↓ REEMPLAZÁ con el título real de tu dibujo -->
-                            <h4 class="design-card-title">Figura y espacio</h4>
-                            <!-- ↓ REEMPLAZÁ con tu descripción -->
+                            <!-- ↓ REPLACE with the real title of your drawing -->
+                            <h4 class="design-card-title">Figure and Space</h4>
+                            <!-- ↓ REPLACE with your description -->
                             <p class="design-card-desc">
-                                Ilustración digital explorando la relación entre figura humana y espacio negativo.
+                                Digital illustration exploring the relationship between the human figure and negative space.
                             </p>
                         </div>
                         <div class="design-card-footer">
                             <span class="design-card-meta">Digital · 2024</span>
-                            <!-- ↓ REEMPLAZÁ href="#" con tu link de Behance -->
+                            <!-- ↓ REPLACE href="#" with your Behance link -->
                             <a class="btn-behance" href="#" target="_blank" rel="noopener">
                                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path
                                         d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.595.836 2.208 2.101 2.208.768 0 1.374-.306 1.695-.872l2.959.893zm-5.68-3.7c-.06-1.095-.57-1.842-1.69-1.842-1.023 0-1.68.663-1.773 1.842H18.046zM9.764 7.495c1.358.053 2.437.355 3.729-.604.465-.34.922-1.078.922-1.838C14.415 3.299 12.986 3 12.014 3H3v18h9.455c1.068 0 2.152-.243 2.889-.688 1.092-.67 1.59-1.744 1.59-2.976 0-2.058-1.213-3.066-2.916-3.297-1.195-.16-1.78-.305-2.334-.564l.08.02zM7.006 5.63H11.48c1.19 0 1.919.532 1.919 1.507 0 1.077-.729 1.664-1.919 1.664H7.006V5.63zm0 9.274H11.9c1.362 0 2.139.617 2.139 1.747 0 1.145-.777 1.748-2.139 1.748H7.006v-3.495z" />
                                 </svg>
-                                Ver en Behance
+                                View on Behance
                             </a>
                         </div>
                     </article>
@@ -691,8 +691,8 @@
                         <div class="design-card-img">
                             <!--
                 ════════════════════════════════════
-                DIBUJO 2 — REEMPLAZAR IMAGEN
-                src="./assets/images/design/dibujo-02.jpg"
+                DRAWING 2 — REPLACE IMAGE
+                src="./assets/images/design/drawing-02.jpg"
                 ════════════════════════════════════
               -->
                             <div class="img-placeholder" style="background:
@@ -701,30 +701,30 @@
                 #120e06;">
                                 <div class="img-placeholder-inner">
                                     <span class="img-placeholder-icon">🎨</span>
-                                    <span class="img-placeholder-text">dibujo-02.jpg</span>
+                                    <span class="img-placeholder-text">drawing-02.jpg</span>
                                 </div>
                             </div>
                             <span class="design-card-badge badge-draw">Sketch</span>
                         </div>
                         <div class="design-card-body">
                             <span class="design-card-category" style="color:var(--rose);">Sketch · Traditional</span>
-                            <!-- ↓ REEMPLAZÁ con el título real de tu dibujo -->
-                            <h4 class="design-card-title">Bocetos de personaje</h4>
-                            <!-- ↓ REEMPLAZÁ con tu descripción -->
+                            <!-- ↓ REPLACE with the real title of your drawing -->
+                            <h4 class="design-card-title">Character Sketches</h4>
+                            <!-- ↓ REPLACE with your description -->
                             <p class="design-card-desc">
-                                Serie de bocetos a lápiz para desarrollo de personajes. Estudio de proporciones y
-                                expresión.
+                                Series of pencil sketches for character development. Study of proportions and
+                                expression.
                             </p>
                         </div>
                         <div class="design-card-footer">
                             <span class="design-card-meta">Pencil · 2024</span>
-                            <!-- ↓ REEMPLAZÁ href="#" con tu link de Behance -->
+                            <!-- ↓ REPLACE href="#" with your Behance link -->
                             <a class="btn-behance" href="#" target="_blank" rel="noopener">
                                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path
                                         d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.595.836 2.208 2.101 2.208.768 0 1.374-.306 1.695-.872l2.959.893zm-5.68-3.7c-.06-1.095-.57-1.842-1.69-1.842-1.023 0-1.68.663-1.773 1.842H18.046zM9.764 7.495c1.358.053 2.437.355 3.729-.604.465-.34.922-1.078.922-1.838C14.415 3.299 12.986 3 12.014 3H3v18h9.455c1.068 0 2.152-.243 2.889-.688 1.092-.67 1.59-1.744 1.59-2.976 0-2.058-1.213-3.066-2.916-3.297-1.195-.16-1.78-.305-2.334-.564l.08.02zM7.006 5.63H11.48c1.19 0 1.919.532 1.919 1.507 0 1.077-.729 1.664-1.919 1.664H7.006V5.63zm0 9.274H11.9c1.362 0 2.139.617 2.139 1.747 0 1.145-.777 1.748-2.139 1.748H7.006v-3.495z" />
                                 </svg>
-                                Ver en Behance
+                                View on Behance
                             </a>
                         </div>
                     </article>
@@ -734,8 +734,8 @@
                         <div class="design-card-img">
                             <!--
                 ════════════════════════════════════
-                DIBUJO 3 — REEMPLAZAR IMAGEN
-                src="./assets/images/design/dibujo-03.jpg"
+                DRAWING 3 — REPLACE IMAGE
+                src="./assets/images/design/drawing-03.jpg"
                 ════════════════════════════════════
               -->
                             <div class="img-placeholder" style="background:
@@ -744,30 +744,30 @@
                 #0c120a;">
                                 <div class="img-placeholder-inner">
                                     <span class="img-placeholder-icon">🖋</span>
-                                    <span class="img-placeholder-text">dibujo-03.jpg</span>
+                                    <span class="img-placeholder-text">drawing-03.jpg</span>
                                 </div>
                             </div>
                             <span class="design-card-badge badge-draw">Ink</span>
                         </div>
                         <div class="design-card-body">
                             <span class="design-card-category" style="color:var(--rose);">Ink · Experimental</span>
-                            <!-- ↓ REEMPLAZÁ con el título real de tu dibujo -->
-                            <h4 class="design-card-title">Tinta y textura</h4>
-                            <!-- ↓ REEMPLAZÁ con tu descripción -->
+                            <!-- ↓ REPLACE with the real title of your drawing -->
+                            <h4 class="design-card-title">Ink and Texture</h4>
+                            <!-- ↓ REPLACE with your description -->
                             <p class="design-card-desc">
-                                Experimentos con tinta sobre papel. Manchas, trazos libres y formas orgánicas en blanco
-                                y negro.
+                                Experiments with ink on paper. Stains, free strokes, and organic forms in black
+                                and white.
                             </p>
                         </div>
                         <div class="design-card-footer">
                             <span class="design-card-meta">Ink · 2023</span>
-                            <!-- ↓ REEMPLAZÁ href="#" con tu link de Behance -->
+                            <!-- ↓ REPLACE href="#" with your Behance link -->
                             <a class="btn-behance" href="#" target="_blank" rel="noopener">
                                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path
                                         d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.595.836 2.208 2.101 2.208.768 0 1.374-.306 1.695-.872l2.959.893zm-5.68-3.7c-.06-1.095-.57-1.842-1.69-1.842-1.023 0-1.68.663-1.773 1.842H18.046zM9.764 7.495c1.358.053 2.437.355 3.729-.604.465-.34.922-1.078.922-1.838C14.415 3.299 12.986 3 12.014 3H3v18h9.455c1.068 0 2.152-.243 2.889-.688 1.092-.67 1.59-1.744 1.59-2.976 0-2.058-1.213-3.066-2.916-3.297-1.195-.16-1.78-.305-2.334-.564l.08.02zM7.006 5.63H11.48c1.19 0 1.919.532 1.919 1.507 0 1.077-.729 1.664-1.919 1.664H7.006V5.63zm0 9.274H11.9c1.362 0 2.139.617 2.139 1.747 0 1.145-.777 1.748-2.139 1.748H7.006v-3.495z" />
                                 </svg>
-                                Ver en Behance
+                                View on Behance
                             </a>
                         </div>
                     </article>
@@ -782,7 +782,7 @@
                 <div class="cat-section-header" data-reveal>
                     <div class="cat-section-icon ux">⬡</div>
                     <div class="cat-section-info">
-                        <span class="cat-section-label">Categoría 03</span>
+                        <span class="cat-section-label">Category 03</span>
                         <h3 class="cat-section-title color-amber">UX / UI</h3>
                     </div>
                     <span class="cat-section-count">3 works</span>
@@ -795,7 +795,7 @@
                         <div class="design-card-img">
                             <!--
                 ════════════════════════════════════
-                UI 1 — REEMPLAZAR IMAGEN
+                UI 1 — REPLACE IMAGE
                 src="./assets/images/design/ui-01.jpg"
                 ════════════════════════════════════
               -->
@@ -838,23 +838,23 @@
                         </div>
                         <div class="design-card-body">
                             <span class="design-card-category" style="color:var(--amber);">UX/UI · App Design</span>
-                            <!-- ↓ REEMPLAZÁ con el título real de tu proyecto -->
-                            <h4 class="design-card-title">Dashboard de analíticas</h4>
-                            <!-- ↓ REEMPLAZÁ con tu descripción -->
+                            <!-- ↓ REPLACE with the real title of your project -->
+                            <h4 class="design-card-title">Analytics Dashboard</h4>
+                            <!-- ↓ REPLACE with your description -->
                             <p class="design-card-desc">
-                                Diseño de interfaz para dashboard de datos. Sistema de componentes, dark mode y
+                                Interface design for a data dashboard. Component system, dark mode, and
                                 responsive layout.
                             </p>
                         </div>
                         <div class="design-card-footer">
                             <span class="design-card-meta">Figma · 2024</span>
-                            <!-- ↓ REEMPLAZÁ href="#" con tu link de Behance o Figma Community -->
+                            <!-- ↓ REPLACE href="#" with your Behance or Figma Community link -->
                             <a class="btn-behance" href="#" target="_blank" rel="noopener">
                                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path
                                         d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.595.836 2.208 2.101 2.208.768 0 1.374-.306 1.695-.872l2.959.893zm-5.68-3.7c-.06-1.095-.57-1.842-1.69-1.842-1.023 0-1.68.663-1.773 1.842H18.046zM9.764 7.495c1.358.053 2.437.355 3.729-.604.465-.34.922-1.078.922-1.838C14.415 3.299 12.986 3 12.014 3H3v18h9.455c1.068 0 2.152-.243 2.889-.688 1.092-.67 1.59-1.744 1.59-2.976 0-2.058-1.213-3.066-2.916-3.297-1.195-.16-1.78-.305-2.334-.564l.08.02zM7.006 5.63H11.48c1.19 0 1.919.532 1.919 1.507 0 1.077-.729 1.664-1.919 1.664H7.006V5.63zm0 9.274H11.9c1.362 0 2.139.617 2.139 1.747 0 1.145-.777 1.748-2.139 1.748H7.006v-3.495z" />
                                 </svg>
-                                Ver en Behance
+                                View on Behance
                             </a>
                         </div>
                     </article>
@@ -864,7 +864,7 @@
                         <div class="design-card-img">
                             <!--
                 ════════════════════════════════════
-                UI 2 — REEMPLAZAR IMAGEN
+                UI 2 — REPLACE IMAGE
                 src="./assets/images/design/ui-02.jpg"
                 ════════════════════════════════════
               -->
@@ -902,23 +902,23 @@
                         </div>
                         <div class="design-card-body">
                             <span class="design-card-category" style="color:var(--amber);">UX/UI · Mobile</span>
-                            <!-- ↓ REEMPLAZÁ con el título real de tu proyecto -->
-                            <h4 class="design-card-title">App de hábitos</h4>
-                            <!-- ↓ REEMPLAZÁ con tu descripción -->
+                            <!-- ↓ REPLACE with the real title of your project -->
+                            <h4 class="design-card-title">Habit App</h4>
+                            <!-- ↓ REPLACE with your description -->
                             <p class="design-card-desc">
-                                Diseño de app mobile para tracking de hábitos. Flujo de usuario, wireframes y prototipo
-                                interactivo.
+                                Mobile app design for habit tracking. User flow, wireframes, and interactive
+                                prototype.
                             </p>
                         </div>
                         <div class="design-card-footer">
                             <span class="design-card-meta">Figma · 2024</span>
-                            <!-- ↓ REEMPLAZÁ href="#" con tu link de Behance -->
+                            <!-- ↓ REPLACE href="#" with your Behance link -->
                             <a class="btn-behance" href="#" target="_blank" rel="noopener">
                                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path
                                         d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.595.836 2.208 2.101 2.208.768 0 1.374-.306 1.695-.872l2.959.893zm-5.68-3.7c-.06-1.095-.57-1.842-1.69-1.842-1.023 0-1.68.663-1.773 1.842H18.046zM9.764 7.495c1.358.053 2.437.355 3.729-.604.465-.34.922-1.078.922-1.838C14.415 3.299 12.986 3 12.014 3H3v18h9.455c1.068 0 2.152-.243 2.889-.688 1.092-.67 1.59-1.744 1.59-2.976 0-2.058-1.213-3.066-2.916-3.297-1.195-.16-1.78-.305-2.334-.564l.08.02zM7.006 5.63H11.48c1.19 0 1.919.532 1.919 1.507 0 1.077-.729 1.664-1.919 1.664H7.006V5.63zm0 9.274H11.9c1.362 0 2.139.617 2.139 1.747 0 1.145-.777 1.748-2.139 1.748H7.006v-3.495z" />
                                 </svg>
-                                Ver en Behance
+                                View on Behance
                             </a>
                         </div>
                     </article>
@@ -928,7 +928,7 @@
                         <div class="design-card-img">
                             <!--
                 ════════════════════════════════════
-                UI 3 — REEMPLAZAR IMAGEN
+                UI 3 — REPLACE IMAGE
                 src="./assets/images/design/ui-03.jpg"
                 ════════════════════════════════════
               -->
@@ -945,23 +945,23 @@
                         </div>
                         <div class="design-card-body">
                             <span class="design-card-category" style="color:var(--amber);">Design System · Tokens</span>
-                            <!-- ↓ REEMPLAZÁ con el título real de tu proyecto -->
-                            <h4 class="design-card-title">Sistema de componentes</h4>
-                            <!-- ↓ REEMPLAZÁ con tu descripción -->
+                            <!-- ↓ REPLACE with the real title of your project -->
+                            <h4 class="design-card-title">Component System</h4>
+                            <!-- ↓ REPLACE with your description -->
                             <p class="design-card-desc">
-                                Design system completo en Figma. Variables, tokens, componentes atomicos y documentación
-                                de uso.
+                                Complete design system in Figma. Variables, tokens, atomic components, and
+                                usage documentation.
                             </p>
                         </div>
                         <div class="design-card-footer">
                             <span class="design-card-meta">Figma · 2023</span>
-                            <!-- ↓ REEMPLAZÁ href="#" con tu link de Behance -->
+                            <!-- ↓ REPLACE href="#" with your Behance link -->
                             <a class="btn-behance" href="#" target="_blank" rel="noopener">
                                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path
                                         d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.595.836 2.208 2.101 2.208.768 0 1.374-.306 1.695-.872l2.959.893zm-5.68-3.7c-.06-1.095-.57-1.842-1.69-1.842-1.023 0-1.68.663-1.773 1.842H18.046zM9.764 7.495c1.358.053 2.437.355 3.729-.604.465-.34.922-1.078.922-1.838C14.415 3.299 12.986 3 12.014 3H3v18h9.455c1.068 0 2.152-.243 2.889-.688 1.092-.67 1.59-1.744 1.59-2.976 0-2.058-1.213-3.066-2.916-3.297-1.195-.16-1.78-.305-2.334-.564l.08.02zM7.006 5.63H11.48c1.19 0 1.919.532 1.919 1.507 0 1.077-.729 1.664-1.919 1.664H7.006V5.63zm0 9.274H11.9c1.362 0 2.139.617 2.139 1.747 0 1.145-.777 1.748-2.139 1.748H7.006v-3.495z" />
                                 </svg>
-                                Ver en Behance
+                                View on Behance
                             </a>
                         </div>
                     </article>
