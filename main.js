@@ -1,5 +1,19 @@
 /* main.js — Valentin Portfolio */
 
+/* ── Hide Loading Screen ── */
+document.addEventListener("DOMContentLoaded", () => {
+  const loadingScreen = document.querySelector(".loading-screen");
+  if (loadingScreen) {
+    setTimeout(() => {
+    loadingScreen.style.transition = "opacity 0.5s ease-out";
+        loadingScreen.style.opacity = "0";
+  }, 2000);
+    loadingScreen.addEventListener("transitionend", () => {
+      loadingScreen.remove();
+    });
+  }
+});
+
 /* ── Scroll reveal ── */
 const revealObserver = new IntersectionObserver(
     (entries) => {

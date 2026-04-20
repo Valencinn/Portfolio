@@ -88,6 +88,50 @@ button {
   font: inherit;
 }
 
+/* ── Loading Screen ── */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+  z-index: 99;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+}
+
+.loader .track,
+.loader .progress {
+  fill: none;
+  stroke-width: 8;
+}
+
+.loader .track {
+  stroke: var(--surface-hi);
+}
+
+.loader .progress {
+  stroke: var(--lime);
+  stroke-linecap: round;
+  animation: spin 1.4s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* ── Base ── */
 body {
   font-family: var(--font-body);
