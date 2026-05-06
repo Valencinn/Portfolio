@@ -20,15 +20,51 @@
             position: absolute;
             inset: 0;
             object-fit: cover;
+            object-position: center;
             width: 100%;
             height: 100%;
             opacity: 0.82;
+            z-index: 1;
+            --proj-scale: 1;
+            --proj-scale-hover: 1.03;
+            transform: scale(var(--proj-scale));
             transition: opacity 0.3s ease, transform 0.4s ease;
+        }
+
+        .proj-img.proj-img-contain {
+            object-fit: contain;
+            padding: clamp(28px, 5vw, 48px);
+            background:
+                radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.12), transparent 36%),
+                radial-gradient(circle at 20% 85%, rgba(184, 255, 132, 0.08), transparent 42%),
+                #070807;
         }
 
         .work-card:hover .proj-img {
             opacity: 1;
-            transform: scale(1.03);
+            transform: scale(var(--proj-scale-hover));
+        }
+
+        .work-card:hover .proj-img.proj-img-contain {
+            transform: scale(var(--proj-scale-hover));
+        }
+
+        .proj-img-checkers {
+            object-position: center 78%;
+            --proj-scale: 1.08;
+            --proj-scale-hover: 1.12;
+        }
+
+        .proj-img-ufc {
+            padding: clamp(18px, 4vw, 30px);
+            --proj-scale: 1.12;
+            --proj-scale-hover: 1.16;
+        }
+
+        .proj-img-portfolio {
+            object-position: center top;
+            --proj-scale: 1.16;
+            --proj-scale-hover: 1.2;
         }
 
         /* Fallback gradient shown when no image is set */
@@ -38,6 +74,56 @@
             display: grid;
             place-items: center;
             padding: 24px;
+        }
+
+        .work-media:has(.proj-img) .proj-fallback {
+            display: none;
+        }
+
+        .work-media:has(.coding-coming-soon)>.proj-fallback:not(.coding-coming-soon) {
+            display: none;
+        }
+
+        .work-badge {
+            z-index: 2;
+        }
+
+        .coding-coming-soon {
+            z-index: 1;
+            background:
+                radial-gradient(circle at 60% 30%, rgba(144, 200, 240, 0.2), transparent 45%),
+                radial-gradient(circle at 25% 70%, rgba(233, 196, 106, 0.15), transparent 40%),
+                #0c1018;
+        }
+
+        .coding-coming-soon-inner {
+            display: grid;
+            place-items: center;
+            gap: 8px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .coding-coming-soon-icon {
+            font-size: 2.5rem;
+            line-height: 1;
+            opacity: 0.5;
+        }
+
+        .coding-coming-soon-text {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--text-faint);
+            letter-spacing: 0.06em;
+        }
+
+        .work-card-flagship .work-meta {
+            gap: 6px;
+        }
+
+        .work-card-flagship .pill {
+            padding: 3px 8px;
+            line-height: 1.1;
         }
     </style>
 </head>
@@ -106,7 +192,7 @@
                 <!-- ══════════════════════════════════════
              PROJECT 1: checkers.ai  (LARGE CARD)
              ══════════════════════════════════════ -->
-                <div class="work-card" data-reveal>
+                <div class="work-card work-card-flagship" data-reveal>
                     <div class="work-media work-media-tall">
 
                         <!--
@@ -155,21 +241,23 @@
                         </div>
 
                         <span class="work-badge">⭐ Flagship</span>
+                        <img class="proj-img proj-img-checkers" src="./assets/images/chekr.jpg"
+                            alt="Screenshot of checkers.ai board game interface" loading="lazy">
                     </div>
                     <div class="work-body">
-                        <p class="work-tag">AI · Game · Python</p>
+                        <p class="work-tag">AI · Game · JavaScript</p>
                         <h3>checkers.ai — Checkers with artificial intelligence</h3>
                         <p>
                             Full checkers game with AI implemented using the Minimax algorithm and alpha-beta pruning.
                             The agent evaluates board positions and makes optimal decisions in real time.
                         </p>
                         <div class="work-meta">
-                            <span class="pill">Python</span>
+                            <span class="pill">JavaScript</span>
                             <span class="pill">Minimax</span>
                             <span class="pill">Alpha-Beta</span>
                             <span class="pill">Game AI</span>
                         </div>
-                        <a href="https://github.com/Valencinn/checkers.ai" target="_blank" rel="noopener"
+                        <a href="https://github.com/Valencinn/Checkers-AI" target="_blank" rel="noopener"
                             style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.82rem;color:var(--lime);">
                             View on GitHub ↗
                         </a>
@@ -207,17 +295,19 @@
                                 </div>
                             </div>
 
+                            <img class="proj-img proj-img-contain proj-img-ufc" src="./assets/images/UFC-Logo-600x338.webp"
+                                alt="UFC logo for the ufc-api project" loading="lazy">
                             <span class="work-badge">API</span>
                         </div>
                         <div class="work-body">
-                            <p class="work-tag">Back-end · Node.js</p>
+                            <p class="work-tag">Back-end · Python</p>
                             <h3>ufc-api — UFC data REST API</h3>
                             <p>API that exposes UFC fighter, event, and stats data. Scraping and parsing
                                 of profiles in real time.</p>
                             <div class="work-meta">
-                                <span class="pill">Node.js</span>
-                                <span class="pill">REST API</span>
-                                <span class="pill">Web Scraping</span>
+                                <span class="pill">Python</span>
+                                <span class="pill">FASTAPI</span>
+                                <span class="pill">MySql</span>
                             </div>
                             <a href="https://github.com/Valencinn/ufc-api" target="_blank" rel="noopener"
                                 style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.8rem;color:var(--lime);">
@@ -254,22 +344,21 @@
                                 </div>
                             </div>
 
+                            <img class="proj-img proj-img-portfolio" src="./assets/images/portfolio.jpg"
+                                alt="Screenshot of Valentin's portfolio website" loading="lazy">
                             <span class="work-badge">This site</span>
                         </div>
                         <div class="work-body">
                             <p class="work-tag">Front-end · CSS</p>
                             <h3>Portfolio — This very site</h3>
-                            <p>Personal portfolio built with pure HTML, CSS, and JavaScript. Glassmorphism, scroll-reveal
+                            <p>Personal portfolio built with pure HTML, CSS, and JavaScript. Glassmorphism,
+                                scroll-reveal
                                 animations, and modular design.</p>
                             <div class="work-meta">
                                 <span class="pill">HTML</span>
                                 <span class="pill">CSS</span>
                                 <span class="pill">Vanilla JS</span>
                             </div>
-                            <a href="https://github.com/Valencinn/portfolio" target="_blank" rel="noopener"
-                                style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.8rem;color:var(--lime);">
-                                View on GitHub ↗
-                            </a>
                         </div>
                     </div>
 
@@ -321,25 +410,25 @@
                             </div>
                         </div>
 
+                        <img class="proj-img" src="./assets/images/wasted.JPG" alt="Wasted project screenshot"
+                            loading="lazy">
                         <span class="work-badge">Game modding</span>
                     </div>
                     <div class="work-body">
                         <p class="work-tag">Game · Lua</p>
-                        <h3>Garry's Mod Mods</h3>
+                        <h3>Wasted deathscreen GMOD</h3>
                         <p>
-                            Custom addons for Garry's Mod written in Lua. New mechanics, entity systems,
-                            and tools for the sandbox.
+                            GTA classic deathscreen mod for Garry's Mod.
                         </p>
                         <div class="work-meta">
                             <span class="pill">Lua</span>
                             <span class="pill">Garry's Mod</span>
-                            <span class="pill">GLua API</span>
                         </div>
                         <!--
               Update this href with the exact link to the GMOD repo on your GitHub.
               For example: href="https://github.com/Valencinn/gmod-mods"
             -->
-                        <a href="https://github.com/Valencinn" target="_blank" rel="noopener"
+                        <a href="https://github.com/Valencinn/GTAV-Deathscreen-for-GMOD" target="_blank" rel="noopener"
                             style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.8rem;color:var(--lime);">
                             View on GitHub ↗
                         </a>
@@ -366,6 +455,8 @@
             -->
 
                         <!-- OPTION B — Placeholder: -->
+                        <img class="proj-img" src="./assets/images/escmenu.png" alt="Escape menu project screenshot"
+                            loading="lazy">
                         <div class="proj-fallback media-rose media-grid-bg">
                             <div style="text-align:center;">
                                 <p style="font-family:var(--font-display);font-size:1.4rem;color:var(--rose);">Your
@@ -376,19 +467,19 @@
                             </div>
                         </div>
 
-                        <span class="work-badge">→ Complete</span>
+                        <span class="work-badge">Game modding</span>
                     </div>
                     <div class="work-body">
                         <!-- Replace this entire block with your repo's real data -->
-                        <p class="work-tag">Category · Language</p>
-                        <h3>Repo name</h3>
-                        <p>Brief project description — what it does, why you built it, what problem it solves.</p>
+                        <p class="work-tag">GAME · Lua</p>
+                        <h3>GMOD Escape menu</h3>
+                        <p>Garry's Mod custom escape menu implementation.</p>
                         <div class="work-meta">
-                            <span class="pill">Tag 1</span>
-                            <span class="pill">Tag 2</span>
-                            <span class="pill">Tag 3</span>
+                            <span class="pill">Lua</span>
+                            <span class="pill">Modding</span>
+                            <span class="pill">Garry's Mod</span>
                         </div>
-                        <a href="https://github.com/Valencinn/YOUR-REPO" target="_blank" rel="noopener"
+                        <a href="https://github.com/Valencinn/GMOD-custom-escapemenu" target="_blank" rel="noopener"
                             style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.8rem;color:var(--lime);">
                             View on GitHub ↗
                         </a>
@@ -411,6 +502,13 @@
             <img class="proj-img" src="./assets/img/repo-name-2.png" alt="Project description" loading="lazy" />
             -->
 
+                        <div class="proj-fallback coding-coming-soon">
+                            <div class="coding-coming-soon-inner">
+                                <span class="coding-coming-soon-icon">&#9203;</span>
+                                <span class="coding-coming-soon-text">Coming Soon</span>
+                            </div>
+                        </div>
+
                         <!-- OPTION B — Placeholder: -->
                         <div class="proj-fallback media-green media-grid-bg">
                             <div style="text-align:center;">
@@ -422,21 +520,17 @@
                             </div>
                         </div>
 
-                        <span class="work-badge">→ Complete</span>
+                        <span class="work-badge">loading...</span>
                     </div>
                     <div class="work-body">
-                        <p class="work-tag">Category · Language</p>
-                        <h3>Repo name</h3>
-                        <p>Brief project description — what it does, why you built it, what problem it solves.</p>
+                        <p class="work-tag">Website · TSX</p>
+                        <h3>Gamestack</h3>
+                        <p>Letterboxd but for videogames.</p>
                         <div class="work-meta">
-                            <span class="pill">Tag 1</span>
-                            <span class="pill">Tag 2</span>
-                            <span class="pill">Tag 3</span>
+                            <span class="pill">Next.js</span>
+                            <span class="pill">TypeScript</span>
+                            <span class="pill">Tailwind CSS</span>
                         </div>
-                        <a href="https://github.com/Valencinn/YOUR-REPO" target="_blank" rel="noopener"
-                            style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:0.8rem;color:var(--lime);">
-                            View on GitHub ↗
-                        </a>
                     </div>
                 </div>
 
