@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Valentin — Visual design work: photography, drawings, and UX/UI.">
+    <meta name="description" content="Valentin — Visual design work: photography, drawings, graphic design, and UX/UI.">
     <title>Design — Valentin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,6 +95,10 @@
             background: rgba(233, 196, 106, 0.12);
         }
 
+        .cat-section-icon.graphic {
+            background: rgba(184, 255, 132, 0.12);
+        }
+
         .cat-section-info {
             display: grid;
             gap: 2px;
@@ -125,6 +129,10 @@
 
         .cat-section-title.color-amber {
             color: var(--amber);
+        }
+
+        .cat-section-title.color-lime {
+            color: var(--lime);
         }
 
         .cat-section-count {
@@ -211,6 +219,14 @@
             object-position: center 90%;
         }
 
+        .design-card-real-img.graphic-blastoff {
+            object-position: center 45%;
+        }
+
+        .design-card-real-img.graphic-essential {
+            object-position: center 58%;
+        }
+
         .design-card:hover .design-card-real-img {
             transform: scale(1.04);
             opacity: 1;
@@ -274,6 +290,11 @@
         .badge-ux {
             background: rgba(233, 196, 106, 0.2);
             color: var(--amber);
+        }
+
+        .badge-graphic {
+            background: rgba(184, 255, 132, 0.2);
+            color: var(--lime);
         }
 
         /* Overlay on hover */
@@ -423,7 +444,7 @@
                 <h1 data-reveal>Visual<br><em style="font-style:normal;color:var(--amber);">systems.</em></h1>
                 <p data-reveal data-delay="1"
                     style="font-size:1.05rem;color:var(--text-muted);max-width:52ch;line-height:1.7;margin-top:16px;">
-                    Photography, hand-drawn work, and UI/UX design. Three different lenses,
+                    Photography, hand-drawn work, graphic design, and UI/UX design. Four different lenses,
                     one consistent visual language.
                 </p>
                 <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;" data-reveal
@@ -467,6 +488,9 @@
                 </button>
                 <button class="design-tab" onclick="scrollToSection('uxui')">
                     <span class="tab-dot"></span> UX / UI
+                </button>
+                <button class="design-tab" onclick="scrollToSection('graphic-design')">
+                    <span class="tab-dot"></span> Graphic Design
                 </button>
             </div>
 
@@ -883,6 +907,90 @@
                 </div>
             </div>
 
+            <!-- Graphic design -->
+            <div class="design-category-section" id="graphic-design">
+                <div class="cat-section-header" data-reveal>
+                    <div class="cat-section-icon graphic">▣</div>
+                    <div class="cat-section-info">
+                        <span class="cat-section-label">Category 04</span>
+                        <h3 class="cat-section-title color-lime">Graphic Design</h3>
+                    </div>
+                    <span class="cat-section-count">3 works - Placeholder</span>
+                </div>
+
+                <div class="design-cards-grid">
+
+                    <!-- Graphic design card 1 -->
+                    <article class="design-card" data-reveal>
+                        <div class="design-card-img">
+                            <img src="./assets/images/Blastoff logo alineado creo.jpg" alt="Blastoff logo design"
+                                loading="lazy" class="design-card-real-img graphic-blastoff" />
+                            <span class="design-card-badge badge-graphic">Graphic</span>
+                        </div>
+                        <div class="design-card-body">
+                            <span class="design-card-category" style="color:var(--lime);">Logo Design -
+                                Clothing</span>
+                            <h4 class="design-card-title">Blastoff</h4>
+                            <p class="design-card-desc">
+                                Designs for upcoming Argentinian clothing brand named Blastoff
+                            </p>
+                        </div>
+                        <div class="design-card-footer">
+                            <span class="design-card-meta">Illustrator - 2024</span>
+                        </div>
+                    </article>
+
+                    <!-- Graphic design card 2 -->
+                    <article class="design-card" data-reveal data-delay="1">
+                        <div class="design-card-img">
+                            <img src="./assets/images/Essential healing MD H.jpg" alt="Essential Healing MD logo design"
+                                loading="lazy" class="design-card-real-img graphic-essential" />
+                            <span class="design-card-badge badge-graphic">Graphic</span>
+                        </div>
+                        <div class="design-card-body">
+                            <span class="design-card-category" style="color:var(--lime);">Logo Design -
+                                Healthcare</span>
+                            <h4 class="design-card-title">Essential Healing MD</h4>
+                            <p class="design-card-desc">
+                                Logo design for healthcare brand named Essential Healing MD located in Woodstock,
+                                Georgia.
+                            </p>
+                        </div>
+                        <div class="design-card-footer">
+                            <span class="design-card-meta">Illustrator - 2024</span>
+                        </div>
+                    </article>
+
+                    <!-- Graphic design card 3 -->
+                    <article class="design-card" data-reveal data-delay="2">
+                        <div class="design-card-img">
+                            <div class="img-placeholder" style="background:
+                 radial-gradient(circle at 45% 35%, rgba(184,255,132,0.18), transparent 46%),
+                 radial-gradient(circle at 80% 80%, rgba(244,160,176,0.13), transparent 42%),
+                 #0d1010;">
+                                <div class="img-placeholder-inner">
+                                    <span class="img-placeholder-icon" style="font-size:2.5rem;">▣</span>
+                                    <span class="img-placeholder-text">Coming Soon</span>
+                                </div>
+                            </div>
+                            <span class="design-card-badge badge-graphic">Graphic</span>
+                        </div>
+                        <div class="design-card-body">
+                            <span class="design-card-category" style="color:var(--lime);">Graphic Design -
+                                Coming Soon</span>
+                            <h4 class="design-card-title">Coming Soon</h4>
+                            <p class="design-card-desc">
+                                New graphic design project in development. Add the final image and details here.
+                            </p>
+                        </div>
+                        <div class="design-card-footer">
+                            <span class="design-card-meta">Format - Year</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
         </section>
 
         <!-- ── Process ── -->
@@ -940,6 +1048,11 @@
                     <h4>UX / UI Design</h4>
                     <p>Figma, FigJam, Auto Layout, component systems and prototyping with realistic interactions.</p>
                 </div>
+                <div class="mini-card" data-reveal data-delay="3">
+                    <span class="mini-icon">▣</span>
+                    <h4>Graphic Design</h4>
+                    <p>Brand systems, posters, layout, typography and visual assets for digital and print pieces.</p>
+                </div>
             </div>
         </section>
 
@@ -971,7 +1084,7 @@
         }
 
         /* Auto-update active tab on scroll */
-        const sections = ["photography", "drawings", "uxui"];
+        const sections = ["photography", "drawings", "uxui", "graphic-design"];
         const tabs = document.querySelectorAll(".design-tab");
 
         const sectionObserver = new IntersectionObserver((entries) => {
