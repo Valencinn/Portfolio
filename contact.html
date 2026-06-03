@@ -23,7 +23,7 @@
 
         .form-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 16px;
         }
 
@@ -225,17 +225,28 @@
         /* ── Layout ── */
         .contact-layout {
             display: grid;
-            grid-template-columns: 1fr 340px;
+            grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
             gap: 20px;
         }
 
         @media (max-width: 860px) {
             .contact-layout {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
             }
 
             .form-row {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-submit,
+            .social-link {
+                width: 100%;
+            }
+
+            .form-submit {
+                justify-content: center;
             }
         }
     </style>

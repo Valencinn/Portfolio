@@ -24,7 +24,7 @@
         /* ── Profile layout ── */
         .about-layout {
             display: grid;
-            grid-template-columns: 300px 1fr;
+            grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);
             gap: 28px;
             align-items: start;
         }
@@ -169,6 +169,7 @@
             font-size: 0.82rem;
             color: var(--text-muted);
             background: var(--surface-lo);
+            min-width: 0;
             transition: all var(--t-fast);
         }
 
@@ -226,7 +227,7 @@
         /* ── Skills ── */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 14px;
         }
 
@@ -284,7 +285,7 @@
 
         .timeline-item {
             display: grid;
-            grid-template-columns: 80px 1fr;
+            grid-template-columns: 80px minmax(0, 1fr);
             gap: 20px;
             padding-bottom: 28px;
             position: relative;
@@ -356,7 +357,7 @@
         /* ── CTA section ── */
         .about-cta {
             display: grid;
-            grid-template-columns: 1fr auto;
+            grid-template-columns: minmax(0, 1fr) auto;
             gap: 24px;
             align-items: center;
         }
@@ -364,7 +365,7 @@
         /* ── Responsive ── */
         @media (max-width: 1000px) {
             .about-layout {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
             }
 
             .profile-card {
@@ -376,21 +377,40 @@
             }
 
             .skills-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
         @media (max-width: 640px) {
             .skills-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
             }
 
             .about-cta {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
             }
 
             .bio-section {
                 padding: 24px 20px;
+            }
+
+            .timeline-item {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 8px;
+                padding-left: 30px;
+            }
+
+            .timeline-item::before {
+                left: 6px;
+            }
+
+            .timeline-dot {
+                left: 0;
+            }
+
+            .timeline-year {
+                text-align: left;
+                padding: 0;
             }
         }
     </style>
